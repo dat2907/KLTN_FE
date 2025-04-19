@@ -1,115 +1,194 @@
 <template>
-    <div class="container py-4">
-        <div class="card shadow-lg border-0 rounded-4">
-            <div class="card-body">
-                <!-- Tabs -->
-                <ul class="nav nav-tabs nav-justified" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" data-bs-toggle="tab" href="#profileTab" role="tab">
-                            <i class="fa-solid fa-user me-1"></i> Thông Tin Cá Nhân
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#passwordTab" role="tab">
-                            <i class="fa-solid fa-lock me-1"></i> Đổi Mật Khẩu
-                        </a>
-                    </li>
-                </ul>
+    <!-- <div id="loader">
+        <img src="assets/img/loading-icon.png" alt="icon" class="loading-icon">
+    </div> -->
+    <!-- * loader -->
 
-                <!-- Tab Content -->
-                <div class="tab-content py-4">
-                    <!-- Profile Tab -->
-                    <div class="tab-pane fade show active" id="profileTab" role="tabpanel">
-                        <div class="row g-4">
-                            <!-- Avatar -->
-                            <div class="col-lg-4">
-                                <div class="card h-100">
-                                    <div class="card-body d-flex flex-column align-items-center text-center">
-                                        <img src="https://i.pinimg.com/736x/d6/4f/63/d64f6390a717d4094d1dd7d2d51285ca.jpg"
-                                            class="rounded-circle bg-primary p-1 mb-3" alt="Avatar"
-                                            style="width: 140px; height: 140px;" />
-                                        <h5 class="mb-1">{{ profile.ho_ten }}</h5>
-                                        <p class="text-muted mb-0">Khách Hàng</p>
-                                        <p class="text-secondary small">{{ profile.dia_chi }}</p>
-                                    </div>
-                                </div>
-                            </div>
+    <!-- App Header -->
+    <div class="appHeader">
+        <div class="left">
+            <a href="#" class="headerButton goBack">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </a>
+        </div>
+        <div class="pageTitle">
+            Settings
+        </div>
+        <div class="right">
+            <a href="app-notifications.html" class="headerButton">
+                <ion-icon class="icon" name="notifications-outline"></ion-icon>
+                <span class="badge badge-danger">4</span>
+            </a>
+        </div>
+    </div>
+    <!-- * App Header -->
 
-                            <!-- Form -->
-                            <div class="col-lg-8">
-                                <div class="card h-100">
-                                    <div class="card-body">
-                                        <div class="mb-3">
-                                            <label class="form-label">Họ và Tên</label>
-                                            <input type="text" class="form-control" v-model="profile.ho_ten"
-                                                placeholder="Nhập họ và tên" />
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label">Email</label>
-                                            <input type="email" class="form-control" v-model="profile.email"
-                                                placeholder="Nhập email" />
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label">Số Điện Thoại</label>
-                                            <input type="text" class="form-control" v-model="profile.so_dien_thoai"
-                                                placeholder="Nhập số điện thoại" />
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label">Địa Chỉ</label>
-                                            <input type="text" class="form-control" v-model="profile.dia_chi"
-                                                placeholder="Nhập địa chỉ" />
-                                        </div>
-                                        <div class="text-end">
-                                            <button v-on:click="updateProfile()" type="button"
-                                                class="btn btn-primary">Cập Nhật</button>
-                                        </div>
+    <!-- App Capsule -->
+    <div id="appCapsule">
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Password Tab -->
-                    <div class="tab-pane fade" id="passwordTab" role="tabpanel">
-                        <div class="card border-0 shadow-sm p-4 rounded-4">
-
-                            <div class="row g-3 ">
-                                <div class="row mb-3">
-                                    <div class="col-lg-2">
-                                        <label for="">Mật khẩu cũ</label>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <input v-model="changepassword.old_password" type="password"
-                                            placeholder="Nhập mật khẩu cũ" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col-lg-2">
-                                        <label for="">Mật khẩu mới</label>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <input v-model="changepassword.new_password" type="password"
-                                            placeholder="Nhập mật khẩu mới" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col-lg-2">
-                                        <label for="">Nhập lại Mật khẩu mới </label>
-                                    </div>
-                                    <div class="col-lg-3">
-                                        <input v-model="changepassword.confirm_password" type="password"
-                                            placeholder="Nhập lại mật khẩu mới" class="form-control">
-                                    </div>
-                                </div>
-                                <button v-on:click="changePass()" class="btn btn-primary">Lưu</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+        <div class="section mt-3 text-center">
+            <div class="avatar-section">
+                <a href="#">
+                    <img src="../../asset/img/LOGO_KLTN_CHINH" alt="avatar" class="imaged w100 rounded">
+                    <span class="button">
+                        <ion-icon name="camera-outline"></ion-icon>
+                    </span>
+                </a>
             </div>
         </div>
+
+        <div class="listview-title mt-1">Theme</div>
+        <ul class="listview image-listview text inset no-line">
+            <li>
+                <div class="item">
+                    <div class="in">
+                        <div>
+                            Dark Mode
+                        </div>
+                        <div class="form-check form-switch  ms-2">
+                            <input class="form-check-input dark-mode-switch" type="checkbox" id="darkmodeSwitch">
+                            <label class="form-check-label" for="darkmodeSwitch"></label>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="listview-title mt-1">Notifications</div>
+        <ul class="listview image-listview text inset">
+            <li>
+                <div class="item">
+                    <div class="in">
+                        <div>
+                            Payment Alert
+                            <div class="text-muted">
+                                Send notification when new payment received
+                            </div>
+                        </div>
+                        <div class="form-check form-switch  ms-2">
+                            <input class="form-check-input" type="checkbox" id="SwitchCheckDefault1">
+                            <label class="form-check-label" for="SwitchCheckDefault1"></label>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="#" class="item">
+                    <div class="in">
+                        <div>Notification Sound</div>
+                        <span class="text-primary">Beep</span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+        <div class="listview-title mt-1">Profile Settings</div>
+        <ul class="listview image-listview text inset">
+            <li>
+                <a href="#" class="item">
+                    <div class="in">
+                        <div>Change Username</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="item">
+                    <div class="in">
+                        <div>Update E-mail</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="item">
+                    <div class="in">
+                        <div>Address</div>
+                        <span class="text-primary">Edit</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <div class="item">
+                    <div class="in">
+                        <div>
+                            Private Profile
+                        </div>
+                        <div class="form-check form-switch ms-2">
+                            <input class="form-check-input" type="checkbox" id="SwitchCheckDefault2">
+                            <label class="form-check-label" for="SwitchCheckDefault2"></label>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="listview-title mt-1">Security</div>
+        <ul class="listview image-listview text mb-2 inset">
+            <li>
+                <a href="#" class="item">
+                    <div class="in">
+                        <div>Update Password</div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <div class="item">
+                    <div class="in">
+                        <div>
+                            2 Step Verification
+                        </div>
+                        <div class="form-check form-switch ms-2">
+                            <input class="form-check-input" type="checkbox" id="SwitchCheckDefault3" checked />
+                            <label class="form-check-label" for="SwitchCheckDefault3"></label>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="#" class="item">
+                    <div class="in">
+                        <div>Log out all devices</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+
+    </div>
+    <!-- * App Capsule -->
+
+
+    <!-- App Bottom Menu -->
+    <div class="appBottomMenu">
+        <a href="index.html" class="item">
+            <div class="col">
+                <ion-icon name="pie-chart-outline"></ion-icon>
+                <strong>Overview</strong>
+            </div>
+        </a>
+        <a href="app-pages.html" class="item">
+            <div class="col">
+                <ion-icon name="document-text-outline"></ion-icon>
+                <strong>Pages</strong>
+            </div>
+        </a>
+        <a href="app-components.html" class="item">
+            <div class="col">
+                <ion-icon name="apps-outline"></ion-icon>
+                <strong>Components</strong>
+            </div>
+        </a>
+        <a href="app-cards.html" class="item">
+            <div class="col">
+                <ion-icon name="card-outline"></ion-icon>
+                <strong>My Cards</strong>
+            </div>
+        </a>
+        <a href="app-settings.html" class="item active">
+            <div class="col">
+                <ion-icon name="settings-outline"></ion-icon>
+                <strong>Settings</strong>
+            </div>
+        </a>
     </div>
 </template>
 <script>

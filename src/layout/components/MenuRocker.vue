@@ -6,22 +6,22 @@
                     <!-- profile box -->
                     <div class="profileBox pt-2 pb-2">
                         <div class="image-wrapper">
-                            <img src="assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged w36" />
+                            <img src="../../assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged w36" />
                         </div>
                         <div class="in">
-                            <strong>Sebastian Doe</strong>
-                            <div class="text-muted">4029209</div>
+                            <strong>Tên tài khoản</strong>
+                            <div class="text-muted">id:022324124</div>
                         </div>
                         <a href="#" class="btn btn-link btn-icon sidebar-close" data-bs-dismiss="modal">
-                            <ion-icon name="close-outline"></ion-icon>
+                            <i class="fa fa-times fa-2x text-black"></i>
                         </a>
                     </div>
                     <!-- * profile box -->
                     <!-- balance -->
                     <div class="sidebar-balance">
-                        <div class="listview-title">Balance</div>
+                        <div class="listview-title">Tài Khoản</div>
                         <div class="in">
-                            <h1 class="amount">$ 2,562.50</h1>
+                            <h1 class="amount">500.000đ</h1>
                         </div>
                     </div>
                     <!-- * balance -->
@@ -31,138 +31,107 @@
                         <a href="index.html" class="action-button">
                             <div class="in">
                                 <div class="iconbox">
-                                    <ion-icon name="add-outline"></ion-icon>
+                                    <i class="fa fa-plus"></i>
                                 </div>
-                                Deposit
+                                Nạp
                             </div>
                         </a>
                         <a href="index.html" class="action-button">
                             <div class="in">
                                 <div class="iconbox">
-                                    <ion-icon name="arrow-down-outline"></ion-icon>
+                                    <i class="fa fa-arrow-down"></i>
                                 </div>
-                                Withdraw
+                                Rút
                             </div>
                         </a>
-                        <a href="index.html" class="action-button">
+                        <!-- <a href="index.html" class="action-button">
                             <div class="in">
                                 <div class="iconbox">
-                                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                                    <i class="fa fa-arrow-right"></i>
                                 </div>
-                                Send
+                                Gửi
                             </div>
-                        </a>
+                        </a> -->
                         <a href="app-cards.html" class="action-button">
                             <div class="in">
                                 <div class="iconbox">
-                                    <ion-icon name="card-outline"></ion-icon>
+                                    <i class="fa fa-credit-card"></i>
                                 </div>
-                                My Cards
+                                Thẻ của tôi
                             </div>
                         </a>
                     </div>
                     <!-- * action group -->
 
                     <!-- menu -->
-                    <div class="listview-title mt-1">Menu</div>
+                    <div class="listview-title mt-1">Tùy Chọn</div>
                     <ul class="listview flush transparent no-line image-listview">
                         <li>
                             <a href="index.html" class="item">
-                                <div class="icon-box bg-primary">
-                                    <ion-icon name="pie-chart-outline"></ion-icon>
+                                <div class="icon-boxx">
+                                    <i class="fas fa-chart-pie"></i>
                                 </div>
                                 <div class="in">
-                                    Overview
-                                    <span class="badge badge-primary">10</span>
+                                    Tổng quan
+                                    <span class="badge">10</span>
                                 </div>
                             </a>
                         </li>
                         <li>
                             <a href="app-pages.html" class="item">
-                                <div class="icon-box bg-primary">
-                                    <ion-icon name="document-text-outline"></ion-icon>
+                                <div class="icon-boxx">
+                                    <i class="fas fa-file-alt"></i>
                                 </div>
-                                <div class="in">Pages</div>
+                                <div class="in">Trang</div>
                             </a>
                         </li>
                         <li>
                             <a href="app-components.html" class="item">
-                                <div class="icon-box bg-primary">
-                                    <ion-icon name="apps-outline"></ion-icon>
+                                <div class="icon-boxx">
+                                    <i class="fas fa-th-large"></i>
                                 </div>
-                                <div class="in">Components</div>
+                                <div class="in">Thành phần</div>
                             </a>
                         </li>
                         <li>
                             <a href="app-cards.html" class="item">
-                                <div class="icon-box bg-primary">
-                                    <ion-icon name="card-outline"></ion-icon>
+                                <div class="icon-boxx">
+                                    <i class="fas fa-credit-card"></i>
                                 </div>
-                                <div class="in">My Cards</div>
+                                <div class="in">Thẻ của tôi</div>
                             </a>
                         </li>
                     </ul>
                     <!-- * menu -->
 
                     <!-- others -->
-                    <div class="listview-title mt-1">Others</div>
+                    <div class="listview-title mt-1">Khác</div>
                     <ul class="listview flush transparent no-line image-listview">
                         <li>
                             <a href="app-settings.html" class="item">
-                                <div class="icon-box bg-primary">
-                                    <ion-icon name="settings-outline"></ion-icon>
+                                <div class="icon-boxx">
+                                    <i class="fas fa-cogs"></i>
                                 </div>
-                                <div class="in">Settings</div>
+                                <div class="in">Cài đặt</div>
                             </a>
                         </li>
                         <li>
                             <a href="component-messages.html" class="item">
-                                <div class="icon-box bg-primary">
-                                    <ion-icon name="chatbubble-outline"></ion-icon>
+                                <div class="icon-boxx ">
+                                    <i class="fas fa-comment-dots"></i>
                                 </div>
-                                <div class="in">Support</div>
+                                <div class="in">Hỗ trợ</div>
                             </a>
                         </li>
                         <li>
                             <a href="app-login.html" class="item">
-                                <div class="icon-box bg-primary">
-                                    <ion-icon name="log-out-outline"></ion-icon>
+                                <div class="icon-boxx">
+                                    <i class="fas fa-sign-out-alt"></i>
                                 </div>
-                                <div class="in">Log out</div>
+                                <div class="in">Đăng xuất</div>
                             </a>
                         </li>
                     </ul>
-                    <!-- * others -->
-
-                    <!-- send money -->
-                    <div class="listview-title mt-1">Send Money</div>
-                    <ul class="listview image-listview flush transparent no-line">
-                        <li>
-                            <a href="#" class="item">
-                                <img src="assets/img/sample/avatar/avatar2.jpg" alt="image" class="image" />
-                                <div class="in">
-                                    <div>Artem Sazonov</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="item">
-                                <img src="assets/img/sample/avatar/avatar4.jpg" alt="image" class="image" />
-                                <div class="in">
-                                    <div>Sophie Asveld</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="item">
-                                <img src="assets/img/sample/avatar/avatar3.jpg" alt="image" class="image" />
-                                <div class="in">
-                                    <div>Kobus van de Vegte</div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- * send money -->
                 </div>
             </div>
         </div>
@@ -171,4 +140,65 @@
 <script>
 export default {};
 </script>
-<style></style>
+<style scoped>
+    #sidebarPanel .modal-content {
+    background: #fff;
+    color: #000;
+    }
+
+    .sidebar-balance,
+    .action-group {
+    background: linear-gradient(135deg, #1e90ff, #007bff);
+    color: #fff;
+    padding: 15px;
+    }
+    .action-group icon {
+    color: #fff;
+    font-size: 20px;
+    }
+    .icon-box {
+    color: #fff;
+    }
+
+    .icon-boxx {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 36px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #1e90ff, #007bff);
+        color: #fff;
+        font-size: 20px;
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+    }
+
+    .item icon-boxx {
+        flex-shrink: 0;
+    }
+
+    .item .in {
+        margin-left: 12px;
+    }
+    #sidebarPanel .item:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    border-radius: 10px;
+    }
+    .listview-title {
+    padding: 12px 20px 0;
+    font-weight: 600;
+    font-size: 1rem;
+    }
+    .badge {
+        background: linear-gradient(135deg, #1e90ff, #007bff);
+        color: white;
+        padding: 5px 5px;
+        border-radius: 50%;
+        font-size: 14px;
+    }
+</style>
+

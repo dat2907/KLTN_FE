@@ -1,33 +1,11 @@
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid mt-5">
         <div class="row">
             <div class="col-lg-12">
     <div class="carousel-wrapper">
         <div class="row">
             <!-- Carousel -->
-            <div class="col-7">
-                <div id="carouselExampleFade" class="carousel slide carousel-fade custom-carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="https://i.pinimg.com/736x/b5/6a/75/b56a75f7c15a17826cf58ea413250df4.jpg" class="d-block" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://i.pinimg.com/736x/a0/0c/9a/a00c9a11ef37d0e0d2782b6e9be60a55.jpg" class="d-block" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://i.pinimg.com/736x/d9/3a/d6/d93ad6ac0983814821853f71a975e9f5.jpg" class="d-block" alt="...">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-            </div>
+        
 
             <!-- Ảnh bên phải -->
             <div class="col-5 side-image-container">

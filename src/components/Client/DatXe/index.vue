@@ -1,9 +1,9 @@
 <template>
 <div class="class">
-    <div class="container py-4">
-        <div class="card shadow-lg border-0 rounded-4 mx-auto" style="max-width: 800px;">
+    <div class="container py-4 mt-1">
+        <div class="card shadow-lg border-0 rounded-4 mx-auto" style="max-width: 400px;">
             <div class="bg-primary text-white text-center rounded-top-4 px-0">
-                <h3 class="mb-0 py-2"><i class="fa-solid fa-car-side me-2"></i>Đặt Xe</h3>
+                <h3 class="mb-0 py-2"><i class="fa-solid fa-car-side me-2 text-light"></i>Đặt Xe</h3>
             </div>
             <div class="card-body">
                 <form>
@@ -96,7 +96,7 @@ export default {
     .container {
     padding-top: 50px;
     padding-bottom: 50px;
-    background-color: rgb(239, 86, 4);
+    background-color: rgb(253, 253, 253);
     }
 
     /* Card chính */
@@ -184,7 +184,7 @@ export default {
     }
     }
     body {
-    background-color: rgb(239, 86, 4); /* Hoặc màu bạn muốn */
+    background-color: rgb(255, 255, 255);
     min-height: 100vh;
     }
 </style>

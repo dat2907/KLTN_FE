@@ -49,5 +49,6 @@ export default {
 @import url("https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js");
 @import "../../assets/css/style.css";
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css");
+
 </style>
 
