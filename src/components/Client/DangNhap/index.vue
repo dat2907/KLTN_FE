@@ -19,6 +19,9 @@
                 <label class="form-label">Mật khẩu</label>
                 <input v-model="client.password" type="password" class="form-control" placeholder="Nhập vào Mật khẩu">
             </div>
+            <div class="mb-3 text-end">
+                <router-link to="/client/quen-mat-khau" class="link-forgot">Quên mật khẩu?</router-link>
+            </div>
             <button type="submit" class="btn-login w-100">
                 <i class="bx bx-user"></i> Đăng Nhập
             </button>
@@ -26,53 +29,6 @@
         </div>
     </div>
 </div>
-<!-- <div class="class">
-    <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-2">
-        <div class="col-12 col-md-8 col-lg-6 mx-auto">
-            <div class="card">
-                <div class="card-body">
-                    <div class="border p-4 rounded">
-                        <div class="text-center">
-                            <h3 class="">Đăng Nhập</h3>
-                            <p>Bạn chưa có tài khoản?
-                                <router-link to="/client/dang-ky" class="text-decoration-none text-primary">
-                                    Đăng ký ngay
-                                </router-link>
-                            </p>
-                        </div>
-                        <div class="login-separater text-center mb-4">
-                            <hr>
-                        </div>
-                        <div class="form-body">
-                            <form class="row g-3">
-                                <div class="col-12">
-                                    <label class="form-label">Email</label>
-                                    <input v-model="client.email" type="email" class="form-control"
-                                        placeholder="Nhập vào Email">
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Mật Khẩu</label>
-                                    <div class="input-group">
-                                        <input v-model="client.password" type="password" class="form-control"
-                                            placeholder="Nhập vào Mật Khẩu">
-                                    </div>
-                                </div>
-
-                                <div class="col-12">
-                                    <div class="d-grid">
-                                        <button v-on:click="ActionDangnhap()" type="button" class="btn btn-login"><i
-                                                class="bx bx-user"></i>Đăng
-                                            Nhập</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
 </template>
 <script>
 import axios from 'axios';
@@ -120,7 +76,7 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        background: rgb(239, 86, 4);
+        background: linear-gradient(135deg, #1e90ff, #007bff);
         padding: 20px;
     }
 
@@ -151,12 +107,22 @@ export default {
     }
 
     .form-control:focus {
-        border-color: rgb(239, 86, 4);
-        box-shadow: 0 0 0 0.2rem rgba(239, 86, 4, 0.2);
+        border-color: rgb(4, 125, 239);
+        box-shadow: 0 0 0 0.2rem rgb(4, 125, 239);
+    }
+
+    .link-forgot {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+    }
+
+    .link-forgot:hover {
+        text-decoration: underline;
     }
 
     .btn-login {
-        background-color: rgb(239, 86, 4);
+        background-color: rgb(4, 125, 239);
         color: #fff;
         padding: 12px;
         border: none;
@@ -167,12 +133,12 @@ export default {
     }
 
     .btn-login:hover {
-        background-color: rgb(200, 70, 0);
+        background-color: rgb(4, 125, 239);
         transform: translateY(-2px);
     }
 
     .link-register {
-        color: rgb(239, 86, 4);
+        color: rgb(4, 125, 239);
         font-weight: 600;
         text-decoration: none;
     }

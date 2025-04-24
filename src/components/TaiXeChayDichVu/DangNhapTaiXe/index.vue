@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-2">
         <div class="col mx-auto">
             <div class="my-4 text-center">
@@ -48,7 +48,39 @@
             </div>
         </div>
     </div>
-</template>
+</template> -->
+<template>
+    <div class="class">
+        <div class="login-wrapper">
+            <div class="login-card">
+                <div class="text-center mb-4">
+                <img src="../../../assets/img/LOGO_KLTN_CHINH.png" alt="Logo" class="login-logo">
+                </div>
+                <h3 class="text-center mb-2">Đăng Nhập</h3>
+                <p class="text-center mb-3">
+                Bạn chưa có tài khoản?
+                <router-link to="/taixechaydichvu/dang-ki-tai-xe" class="link-register">Đăng ký ngay</router-link>
+                </p>
+                <form @submit.prevent="ActionDangnhap()">
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input v-model="driver.email" type="email" class="form-control" placeholder="Nhập vào Email">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Mật khẩu</label>
+                    <input v-model="driver.password" type="password" class="form-control" placeholder="Nhập vào Mật khẩu">
+                </div>
+                <div class="mb-3 text-end">
+                    <router-link to="/client/quen-mat-khau" class="link-forgot">Quên mật khẩu?</router-link>
+                </div>
+                <button type="submit" class="btn-login w-100">
+                    <i class="bx bx-user"></i> Đăng Nhập
+                </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </template>
 <script>
 import axios from 'axios';
 export default {
@@ -89,4 +121,88 @@ export default {
     },
 }
 </script>
-<style></style>
+<style scoped>
+    .login-wrapper {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #1e90ff, #007bff);
+        padding: 20px;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 480px;
+        background: #fff;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-logo {
+        width: 200px;
+        border-radius: 12px;
+    }
+
+    .form-label {
+        font-weight: 600;
+        color: #333;
+    }
+
+    .form-control {
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid #ddd;
+        transition: 0.3s;
+    }
+
+    .form-control:focus {
+        border-color: rgb(4, 125, 239);
+        box-shadow: 0 0 0 0.2rem rgb(4, 125, 239);
+    }
+
+    .link-forgot {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+    }
+
+    .link-forgot:hover {
+        text-decoration: underline;
+    }
+
+    .btn-login {
+        background-color: rgb(4, 125, 239);
+        color: #fff;
+        padding: 12px;
+        border: none;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: 0.3s ease;
+        box-shadow: 0 4px 12px rgba(239, 86, 4, 0.3);
+    }
+
+    .btn-login:hover {
+        background-color: rgb(4, 125, 239);
+        transform: translateY(-2px);
+    }
+
+    .link-register {
+        color: rgb(4, 125, 239);
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .link-register:hover {
+        text-decoration: underline;
+    }
+    /* html, body {
+        background-color: rgb(239, 86, 4);
+        min-height: 100vh;
+    }
+
+    .class {
+    min-height: 100vh; 
+    } */
+</style>

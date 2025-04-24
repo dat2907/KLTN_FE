@@ -1,4 +1,11 @@
 <template>
+    <div class="custom-header d-flex justify-content-between align-items-center p-3 mb-4">
+    <h4 class="text-white fw-bold m-0">Quản Lý Mã Giảm Giá</h4>
+    <div class="search-box">
+        <input type="text" class="form-control" placeholder="Tìm mã giảm giá..." v-model="search">
+        <i class="fas fa-search search-icon"></i>
+    </div>
+</div>
     <div class="modal fade" id="capnhatDM" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -49,7 +56,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button v-on:click="capnhatMaGiamGia()" type="button" class="btn btn-primary"
+                    <button v-on:click="capnhatMaGiamGia()" type="button" class="btn"
                         data-bs-dismiss="modal">Cập
                         nhật</button>
                 </div>
@@ -58,7 +65,7 @@
     </div>
     <div class="row">
         <div class="col-lg-3">
-            <div class="card">
+            <div class="card mb-3">
                 <div class="card-header">
                     <h6><b>THÊM MỚI MÃ GIẢM GIÁ</b></h6>
                 </div>
@@ -103,7 +110,7 @@
                     </div>
                 </div>
                 <div class="card-footer text-end">
-                    <button v-on:click="themMoiMaGiamGia()" class="btn btn-primary">Thêm Mới</button>
+                    <button v-on:click="themMoiMaGiamGia()" class="btn">Thêm Mới</button>
                 </div>
             </div>
         </div>
@@ -294,4 +301,30 @@ export default {
     },
 }
 </script>
-<style></style>
+<style>
+.custom-header {
+    background: linear-gradient(45deg, #007bff, #00c6ff);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.search-box {
+    position: relative;
+    width: 300px;
+}
+
+.search-box input {
+    padding-left: 35px;
+    border-radius: 20px;
+    border: none;
+    height: 38px;
+    font-size: 14px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.search-box .search-icon {
+    position: absolute;
+    top: 9px;
+    left: 12px;
+    color: #aaa;
+}
+</style>

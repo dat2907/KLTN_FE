@@ -1,28 +1,29 @@
-<template >
-	<div class="appHeader no-border transparent position-absolute">
-        <div class="left">
-            <a href="#" class="headerButton goBack">
-                <ion-icon name="chevron-back-outline"></ion-icon>
-            </a>
-        </div>
-        <div class="pageTitle"></div>
-        <div class="right">
-        </div>
+<template>
+    <TopAdmin></TopAdmin>
+    <MenuAdmin></MenuAdmin>
+    <div id="appCapsule">
+        <router-view></router-view>
     </div>
-			<RouterView></RouterView>
+    <BotAdmin></BotAdmin>
 </template>
 <script>
+import TopAdmin from "../components/Admin/TopAdmin.vue";
+import MenuAdmin from "../components/Admin/MenuAdmin.vue";
+import BotAdmin from "../components/Admin/BotAdmin.vue";
 import "../../assets/js/lib/bootstrap.bundle.min.js";
 import "../../assets/js/plugins/splide/splide.min.js";
 import "../../assets/js/base.js";
 import { RouterView } from "vue-router";
 export default {
-	name        :   'app',
-    components  :   {
+    name: "app",
+    components: {
+        TopAdmin,
+        MenuAdmin,
+        BotAdmin,
     },
-}
+};
 </script>
-<style >
+<style>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 @import url("https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js");
 @import url("https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js");

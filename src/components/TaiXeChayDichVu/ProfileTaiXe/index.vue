@@ -25,8 +25,8 @@
                             <div class="col-lg-4">
                                 <div class="card h-100">
                                     <div class="card-body d-flex flex-column align-items-center text-center">
-                                        <img src="https://i.pinimg.com/736x/d6/4f/63/d64f6390a717d4094d1dd7d2d51285ca.jpg"
-                                            class="rounded-circle bg-primary p-1 mb-3" alt="Avatar"
+                                        <img src="../../../assets/img/avatar2.jpeg"
+                                            class="rounded-circle p-1 mb-3" alt="Avatar"
                                             style="width: 140px; height: 140px;" />
                                         <h5 class="mb-1">{{ profile.ho_ten }}</h5>
                                         <p class="text-muted mb-0">Tài xế</p>
@@ -61,7 +61,7 @@
                                         </div>
                                         <div class="text-end">
                                             <button v-on:click="updateProfile()" type="button"
-                                                class="btn btn-primary">Cập Nhật</button>
+                                                class="btn text-white">Cập Nhật</button>
                                         </div>
                                     </div>
                                 </div>
@@ -100,7 +100,7 @@
                                             placeholder="Nhập lại mật khẩu mới" class="form-control">
                                     </div>
                                 </div>
-                                <button v-on:click="changePass()" class="btn btn-primary">Lưu</button>
+                                <button v-on:click="changePass()" class="btn text-white">Lưu</button>
                             </div>
                         </div>
                     </div>
@@ -190,4 +190,128 @@ export default {
     },
 }
 </script>
-<style></style>
+<style>
+/* Tab menu */
+.nav-tabs {
+    border-bottom: 2px solid #ddd;
+}
+
+.nav-tabs .nav-item .nav-link {
+    border: none;
+    color: #5a5a5a;
+    font-weight: 600;
+}
+
+.nav-tabs .nav-item .nav-link.active {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.nav-tabs .nav-item .nav-link:hover {
+    color: #0056b3;
+}
+
+/* Card */
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card .card-body h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.card .card-body img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+}
+
+.card .card-body p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Form */
+.form-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: none;
+    font-size: 0.875rem;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.text-end .btn {
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+/* Button */
+.btn {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .card .card-body {
+        padding: 15px;
+    }
+
+    .row.g-4 {
+        flex-direction: column;
+    }
+
+    .col-lg-4, .col-lg-8 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .nav-tabs {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card .card-body h5 {
+        font-size: 1rem;
+    }
+
+    .form-label {
+        font-size: 0.875rem;
+    }
+
+    .form-control {
+        font-size: 0.75rem;
+    }
+
+    .btn-primary {
+        font-size: 0.875rem;
+    }
+}
+</style>

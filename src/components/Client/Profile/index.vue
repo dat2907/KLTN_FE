@@ -1,194 +1,109 @@
 <template>
-    <!-- <div id="loader">
-        <img src="assets/img/loading-icon.png" alt="icon" class="loading-icon">
-    </div> -->
-    <!-- * loader -->
+    <div class="container py-4">
+        <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-body">
+                <ul class="nav nav-tabs nav-justified" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#profileTab" role="tab">
+                            <i class="fa-solid fa-user me-1"></i> Thông Tin Cá Nhân
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#passwordTab" role="tab">
+                            <i class="fa-solid fa-lock me-1"></i> Đổi Mật Khẩu
+                        </a>
+                    </li>
+                </ul>
 
-    <!-- App Header -->
-    <div class="appHeader">
-        <div class="left">
-            <a href="#" class="headerButton goBack">
-                <ion-icon name="chevron-back-outline"></ion-icon>
-            </a>
-        </div>
-        <div class="pageTitle">
-            Settings
-        </div>
-        <div class="right">
-            <a href="app-notifications.html" class="headerButton">
-                <ion-icon class="icon" name="notifications-outline"></ion-icon>
-                <span class="badge badge-danger">4</span>
-            </a>
-        </div>
-    </div>
-    <!-- * App Header -->
+                <div class="tab-content py-4">
+                    <div class="tab-pane fade show active" id="profileTab" role="tabpanel">
+                        <div class="row g-4">
+                            <div class="col-lg-4">
+                                <div class="card h-100">
+                                    <div class="card-body d-flex flex-column align-items-center text-center">
+                                        <img src="../../../assets/img/avatar1.jpeg"
+                                            class="rounded-circle p-1 mb-3" alt="Avatar"
+                                            style="width: 140px; height: 140px;" />
+                                        <h5 class="mb-1">{{ profile.ho_ten }}</h5>
+                                        <p class="text-muted mb-0">Khách Hàng</p>
+                                        <p class="text-secondary small">{{ profile.dia_chi }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <label class="form-label">Họ và Tên</label>
+                                            <input type="text" class="form-control" v-model="profile.ho_ten"
+                                                placeholder="Nhập họ và tên" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Email</label>
+                                            <input type="email" class="form-control" v-model="profile.email"
+                                                placeholder="Nhập email" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Số Điện Thoại</label>
+                                            <input type="text" class="form-control" v-model="profile.so_dien_thoai"
+                                                placeholder="Nhập số điện thoại" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Địa Chỉ</label>
+                                            <input type="text" class="form-control" v-model="profile.dia_chi"
+                                                placeholder="Nhập địa chỉ" />
+                                        </div>
+                                        <div class="text-end">
+                                            <button v-on:click="updateProfile()" type="button"
+                                                class="btn text-white">Cập Nhật</button>
+                                        </div>
 
-    <!-- App Capsule -->
-    <div id="appCapsule">
-
-        <div class="section mt-3 text-center">
-            <div class="avatar-section">
-                <a href="#">
-                    <img src="../../asset/img/LOGO_KLTN_CHINH" alt="avatar" class="imaged w100 rounded">
-                    <span class="button">
-                        <ion-icon name="camera-outline"></ion-icon>
-                    </span>
-                </a>
-            </div>
-        </div>
-
-        <div class="listview-title mt-1">Theme</div>
-        <ul class="listview image-listview text inset no-line">
-            <li>
-                <div class="item">
-                    <div class="in">
-                        <div>
-                            Dark Mode
-                        </div>
-                        <div class="form-check form-switch  ms-2">
-                            <input class="form-check-input dark-mode-switch" type="checkbox" id="darkmodeSwitch">
-                            <label class="form-check-label" for="darkmodeSwitch"></label>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-
-        <div class="listview-title mt-1">Notifications</div>
-        <ul class="listview image-listview text inset">
-            <li>
-                <div class="item">
-                    <div class="in">
-                        <div>
-                            Payment Alert
-                            <div class="text-muted">
-                                Send notification when new payment received
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-check form-switch  ms-2">
-                            <input class="form-check-input" type="checkbox" id="SwitchCheckDefault1">
-                            <label class="form-check-label" for="SwitchCheckDefault1"></label>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="passwordTab" role="tabpanel">
+                        <div class="card border-0 shadow-sm p-4 rounded-4">
+
+                            <div class="row g-3 ">
+                                <div class="row mb-3">
+                                    <div class="col-lg-2">
+                                        <label for="">Mật khẩu cũ</label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <input v-model="changepassword.old_password" type="password"
+                                            placeholder="Nhập mật khẩu cũ" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-lg-2">
+                                        <label for="">Mật khẩu mới</label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <input v-model="changepassword.new_password" type="password"
+                                            placeholder="Nhập mật khẩu mới" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-lg-2">
+                                        <label for="">Nhập lại Mật khẩu mới </label>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <input v-model="changepassword.confirm_password" type="password"
+                                            placeholder="Nhập lại mật khẩu mới" class="form-control">
+                                    </div>
+                                </div>
+                                <button v-on:click="changePass()" class="btn text-white">Lưu</button>
+                            </div>
                         </div>
                     </div>
+
                 </div>
-            </li>
-            <li>
-                <a href="#" class="item">
-                    <div class="in">
-                        <div>Notification Sound</div>
-                        <span class="text-primary">Beep</span>
-                    </div>
-                </a>
-            </li>
-        </ul>
-
-        <div class="listview-title mt-1">Profile Settings</div>
-        <ul class="listview image-listview text inset">
-            <li>
-                <a href="#" class="item">
-                    <div class="in">
-                        <div>Change Username</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="item">
-                    <div class="in">
-                        <div>Update E-mail</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="item">
-                    <div class="in">
-                        <div>Address</div>
-                        <span class="text-primary">Edit</span>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <div class="item">
-                    <div class="in">
-                        <div>
-                            Private Profile
-                        </div>
-                        <div class="form-check form-switch ms-2">
-                            <input class="form-check-input" type="checkbox" id="SwitchCheckDefault2">
-                            <label class="form-check-label" for="SwitchCheckDefault2"></label>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-
-        <div class="listview-title mt-1">Security</div>
-        <ul class="listview image-listview text mb-2 inset">
-            <li>
-                <a href="#" class="item">
-                    <div class="in">
-                        <div>Update Password</div>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <div class="item">
-                    <div class="in">
-                        <div>
-                            2 Step Verification
-                        </div>
-                        <div class="form-check form-switch ms-2">
-                            <input class="form-check-input" type="checkbox" id="SwitchCheckDefault3" checked />
-                            <label class="form-check-label" for="SwitchCheckDefault3"></label>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <a href="#" class="item">
-                    <div class="in">
-                        <div>Log out all devices</div>
-                    </div>
-                </a>
-            </li>
-        </ul>
-
-
-    </div>
-    <!-- * App Capsule -->
-
-
-    <!-- App Bottom Menu -->
-    <div class="appBottomMenu">
-        <a href="index.html" class="item">
-            <div class="col">
-                <ion-icon name="pie-chart-outline"></ion-icon>
-                <strong>Overview</strong>
             </div>
-        </a>
-        <a href="app-pages.html" class="item">
-            <div class="col">
-                <ion-icon name="document-text-outline"></ion-icon>
-                <strong>Pages</strong>
-            </div>
-        </a>
-        <a href="app-components.html" class="item">
-            <div class="col">
-                <ion-icon name="apps-outline"></ion-icon>
-                <strong>Components</strong>
-            </div>
-        </a>
-        <a href="app-cards.html" class="item">
-            <div class="col">
-                <ion-icon name="card-outline"></ion-icon>
-                <strong>My Cards</strong>
-            </div>
-        </a>
-        <a href="app-settings.html" class="item active">
-            <div class="col">
-                <ion-icon name="settings-outline"></ion-icon>
-                <strong>Settings</strong>
-            </div>
-        </a>
+        </div>
     </div>
 </template>
 <script>
@@ -271,4 +186,128 @@ export default {
     },
 }
 </script>
-<style></style>
+<style>
+/* Tab menu */
+.nav-tabs {
+    border-bottom: 2px solid #ddd;
+}
+
+.nav-tabs .nav-item .nav-link {
+    border: none;
+    color: #5a5a5a;
+    font-weight: 600;
+}
+
+.nav-tabs .nav-item .nav-link.active {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.nav-tabs .nav-item .nav-link:hover {
+    color: #0056b3;
+}
+
+/* Card */
+.card {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card .card-body h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.card .card-body img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+}
+
+.card .card-body p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Form */
+.form-label {
+    font-weight: 600;
+    color: #333;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: none;
+    font-size: 0.875rem;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.text-end .btn {
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+/* Button */
+.btn {
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .card .card-body {
+        padding: 15px;
+    }
+
+    .row.g-4 {
+        flex-direction: column;
+    }
+
+    .col-lg-4, .col-lg-8 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .nav-tabs {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card .card-body h5 {
+        font-size: 1rem;
+    }
+
+    .form-label {
+        font-size: 0.875rem;
+    }
+
+    .form-control {
+        font-size: 0.75rem;
+    }
+
+    .btn-primary {
+        font-size: 0.875rem;
+    }
+}
+</style>

@@ -17,12 +17,12 @@
             <input v-model="client_create.ho_ten" type="text" class="form-control" placeholder="Nhập vào họ và tên">
         </div>
         <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input v-model="client_create.email" type="email" class="form-control" placeholder="Nhập vào Email">
-        </div>
-        <div class="mb-3">
             <label class="form-label">Số Điện Thoại</label>
             <input v-model="client_create.so_dien_thoai" type="text" class="form-control" placeholder="Nhập vào số điện thoại">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input v-model="client_create.email" type="email" class="form-control" placeholder="Nhập vào Email">
         </div>
         <div class="mb-3">
             <label class="form-label">Địa chỉ</label>
@@ -40,86 +40,17 @@
         </form>
     </div>
     </div>
-    <!-- <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-2">
-        <div class="col mx-auto">
-            <div class="my-4 text-center">
-                <img src="https://i.pinimg.com/736x/5f/5a/c2/5f5ac262a11716546274fd7ab484a428.jpg" width="180" alt="">
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <div class="border p-4 rounded">
-                        <div class="text-center">
-                            <h3 class="">Đăng Ký Tài Khoản</h3>
-                            <p>
-                                <router-link to="">
-                                    Bạn đã có tài khoản?
-                                </router-link>
-                            </p>
-                        </div>
-                        <div class="login-separater text-center mb-4">
-                            <hr>
-                        </div>
-                        <div class="form-body">
-                            <div class="row g-3">
-                                <div class="col-sm-12">
-                                    <label class="form-label">Họ Và Tên</label>
-                                    <input v-model="client_create.ho_ten" type="text" class="form-control"
-                                        placeholder="Nhập vào họ và tên">
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Email</label>
-                                    <input v-model="client_create.email" type="email" class="form-control"
-                                        placeholder="Nhập vào Email">
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Số Điện Thoại</label>
-                                    <input v-model="client_create.so_dien_thoai" type="text" class="form-control"
-                                        placeholder="Nhập vào số điện thoại">
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Địa chỉ</label>
-                                    <input v-model="client_create.dia_chi" type="text" class="form-control"
-                                        placeholder="Nhập ngày sinh">
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Mật Khẩu</label>
-                                    <div class="input-group">
-                                        <input v-model="client_create.password" type="password" class="form-control"
-                                            placeholder="Nhập vào Mật Khẩu">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Nhập Lại Mật Khẩu</label>
-                                    <div class="input-group">
-                                        <input v-model="client_create.re_password" type="password" class="form-control"
-                                            placeholder="Nhập lại Mật Khẩu">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="d-grid">
-                                        <button v-on:click="ActionDangky()" type="button" class="btn btn-primary"><i
-                                                class="bx bx-user"></i>Đăng
-                                            Kí</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
 </template>
 <script>
 import axios from 'axios';
 export default {
     data() {
         return {
-            client_create: {}
+            client_create: {
+            }
         }
     },
     mounted() {
-
     },
     methods: {
         ActionDangky() {
@@ -154,7 +85,7 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
-        background: rgb(239, 86, 4);
+        background: rgb(4, 125, 239);
         padding: 30px;
     }
 
@@ -185,12 +116,12 @@ export default {
     }
 
     .form-control:focus {
-        border-color: rgb(239, 86, 4);
-        box-shadow: 0 0 0 0.2rem rgba(239, 86, 4, 0.2);
+        border-color: rgb(4, 125, 239);
+        box-shadow: 0 0 0 0.2rem rgb(81, 131, 177);
     }
 
     .btn-auth {
-        background-color: rgb(239, 86, 4);
+        background-color: rgb(4, 125, 239);
         color: #fff;
         padding: 12px;
         border: none;
@@ -202,12 +133,12 @@ export default {
     }
 
     .btn-auth:hover {
-        background-color: rgb(200, 70, 0);
+        background-color: rgb(4, 125, 239);
         transform: translateY(-2px);
     }
 
     .auth-link {
-        color: rgb(239, 86, 4);
+        color: rgb(4, 125, 239);
         font-weight: 600;
         text-decoration: none;
     }

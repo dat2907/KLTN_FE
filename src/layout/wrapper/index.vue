@@ -21,7 +21,7 @@ import MenuRocker from "../components/MenuRocker.vue";
 import "../../assets/js/lib/bootstrap.bundle.min.js";
 import "../../assets/js/plugins/splide/splide.min.js";
 import "../../assets/js/base.js";
-
+import { RouterView } from "vue-router";
 // import "https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js";
 export default {
   name: "app",
