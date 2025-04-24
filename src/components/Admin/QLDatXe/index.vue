@@ -1,20 +1,9 @@
 <template>
     <div class="container">
         <div class="row">
-            <div class="card rounded-4">
-                <img src="https://i.pinimg.com/474x/b8/dd/8b/b8dd8bd829ba698fdff1fecc6de29c6d.jpg"
-                    class="rounded-4 img-fluid" alt="..." style="height: 400px;">
-                <div
-                    class="position-absolute top-50 start-0 translate-middle-y fw-bold fs-5 bg-opacity-75 p-3 rounded-end ms-3">
-                    <h1><i class="fa-solid fa-clock-rotate-left text-white"></i></h1>
-                    <h1 class="text-white">QUẢN LÝ DANH SÁCH ĐƠN ĐẶT XE</h1>
-                </div>
-            </div>
-        </div>
-        <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header bg-warning">
+                    <div class="card-header">
                         <h3 class="text-center align-middle">Danh Sách Đơn Đặt Xe<b></b></h3>
                     </div>
                     <div class="card-body">
@@ -184,4 +173,68 @@ export default {
 
 }
 </script>
-<style></style>
+<style scoped>
+.container {
+    margin-top: 40px;
+}
+
+.card {
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #0dcaf0;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.table thead th {
+    vertical-align: middle;
+    background-color: #439ff5 !important;
+    color: #fff;
+}
+
+.table tbody td {
+    vertical-align: middle;
+}
+
+.search-control {
+    padding-left: 40px;
+}
+
+.search-show {
+    color: #aaa;
+    font-size: 18px;
+}
+
+.btn {
+    min-width: 120px;
+}
+
+.modal-header {
+    background-color: #0dcaf0;
+    color: white;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+input.form-control,
+select.form-control {
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+}
+
+.modal-footer .btn {
+    min-width: 100px;
+}
+
+/* Hiệu ứng hover nút */
+button.btn:hover {
+    opacity: 0.9;
+    transition: all 0.2s ease-in-out;
+}
+</style>

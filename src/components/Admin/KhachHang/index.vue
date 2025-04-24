@@ -1,9 +1,8 @@
 <template>
-    <div class="container">
+    
+    <div class="container mt-2">
         <div class="row">
             <div class="card rounded-4">
-                <img src="https://i.pinimg.com/474x/b8/dd/8b/b8dd8bd829ba698fdff1fecc6de29c6d.jpg"
-                    class="rounded-4 img-fluid" alt="..." style="height: 400px;">
                 <div
                     class="position-absolute top-50 start-0 translate-middle-y fw-bold fs-5 bg-opacity-75 p-3 rounded-end ms-3">
                     <h1><i class="fa-solid fa-clock-rotate-left text-white"></i></h1>
@@ -14,18 +13,19 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-header">
-                        <h3 class="text-center align-middle bg-warning"><b>Thông tin khách hàng</b></h3>
+                    <div class="card-header custom-header">
+                        <h3><i class="fa-solid fa-users me-2"></i><b>Thông tin khách hàng</b></h3>
                     </div>
+                    
+
                     <div class="card-body">
-                        <div class="input-group mt-3 w-100 mb-1">
-                            <input type="text" class="form-control search-control border border-1 border-secondary"
-                                placeholder="Search...">
-                            <span class="position-absolute top-50 search-show translate-middle-y" style="left: 15px;"><i
-                                    class="bx bx-search"></i></span>
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Tìm
-                                Kiếm</button>
+                        <div class="search-bar-wrapper mb-3">
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0"><i class="bx bx-search"></i></span>
+                            <input type="text" class="form-control border-start-0" placeholder="Tìm kiếm khách hàng...">
+                            <button class="btn " type="button"></button>
                         </div>
+                    </div>
                         <table class="table table-bordered table-hover mb-1">
                             <thead>
                                 <tr>
@@ -274,4 +274,33 @@ export default {
     },
 }
 </script>
-<style></style>
+<style>
+
+.custom-header {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: white;
+    text-align: center;
+    border-radius: 1rem 1rem 0 0;
+    padding: 1rem;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar-wrapper .input-group {
+    max-width: 500px;
+    margin: auto;
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+.search-bar-wrapper .form-control {
+    border: none;
+    box-shadow: none;
+}
+
+.search-bar-wrapper .input-group-text {
+    background-color: white;
+    border: none;
+}
+</style>

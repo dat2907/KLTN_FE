@@ -8,7 +8,7 @@
         
 
             <!-- Ảnh bên phải -->
-            <div class="col-5 side-image-container">
+            <div class="anh nen col-5 side-image-container">
                 <img src="https://i.pinimg.com/736x/d9/3a/d6/d93ad6ac0983814821853f71a975e9f5.jpg" alt="Side" class="side-image">
             </div>
         </div>

@@ -2,8 +2,8 @@
 <div class="class">
     <div class="container py-4 mt-1">
         <div class="card shadow-lg border-0 rounded-4 mx-auto" style="max-width: 400px;">
-            <div class="bg-primary text-white text-center rounded-top-4 px-0">
-                <h3 class="mb-0 py-2"><i class="fa-solid fa-car-side me-2 text-light"></i>Đặt Xe</h3>
+            <div class="card-gradient text-white text-center rounded-top-4 px-0">
+                <h3 class="mb-0 py-2 text-light">Đặt Xe</h3>
             </div>
             <div class="card-body">
                 <form>
@@ -108,7 +108,7 @@ export default {
 
     /* Header màu cam chủ đạo */
     .card .bg-primary {
-    background: linear-gradient(135deg, rgb(255, 255, 255), rgb(243, 207, 193));
+    background: linear-gradient(135deg, rgb(199, 11, 11), rgb(243, 207, 193));
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     }
@@ -132,6 +132,10 @@ export default {
     padding: 10px 15px;
     border: 1px solid #ddd;
     transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .card-gradient {
+    background: linear-gradient(135deg, #1e90ff, #0066cc); /* Gradient xanh */
+    color: white;
     }
 
     .form-control:focus,

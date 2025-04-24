@@ -1,10 +1,10 @@
 <template>
-    <div class="ruttien-wrapper">
-        <div class="ruttien-header">
-            <h2>Rút Tiền</h2>
+    <div class="naptien-wrapper">
+        <div class="naptien-header">
+            <h2>Nạp Tiền</h2>
         </div>
 
-        <div class="ruttien-card">
+        <div class="naptien-card">
             <h5>Thông tin tài khoản</h5>
             <p><strong>Họ tên:</strong> Tên tài khoản</p>
             <p><strong>Số dư:</strong> 500.000 VND</p>
@@ -26,11 +26,19 @@
                 <button class="btn btn-secondary mt-2" @click="toggleDropdown">Thu gọn</button>
             </div>
         </div>
-        <div class="ruttien-card mt-2">
-            <label>Số tiền cần rút</label>
-            <input type="number" class="ruttien-input" placeholder="Nhập số tiền">
+        <div class="naptien-card mt-2">
+            <label>Số tiền cần nạp</label>
+            <!-- Input nhập tiền -->
+            <input type="number" class="naptien-input" v-model="soTien" placeholder="Nhập số tiền">
 
-            <button class="ruttien-button">Rút Tiền</button>
+            <!-- Các nút mệnh giá -->
+            <div class="menhgia-group">
+                <button type="button" @click="chonMenhGia(100000)">100.000đ</button>
+                <button type="button" @click="chonMenhGia(200000)">200.000đ</button>
+                <button type="button" @click="chonMenhGia(500000)">500.000đ</button>
+                <button type="button" @click="chonMenhGia(1000000)">1.000.000đ</button>
+            </div>
+            <button class="naptien-button">Nạp Tiền</button>
         </div>
     </div>
 
@@ -45,8 +53,10 @@ export default {
                 'Ví ZaloPay',
                 'Ví ShopeePay',
                 'Ví MoMo',
-                'Thẻ ATM nội địa (VNPay)'
-            ]
+                'Thẻ ATM nội địa (VNPay)',
+                'Chuyển khoản QR'
+            ],
+            soTien: ''
         }
     },
     methods: {
@@ -56,23 +66,26 @@ export default {
         selectMethod(method) {
             this.selectedMethod = method;
             this.dropdownVisible = false;
+        },
+        chonMenhGia(menhgia) {
+            this.soTien = menhgia;
         }
     }
 }
 </script>
 <style scoped>
-.ruttien-wrapper {
+.naptien-wrapper {
     max-width: 500px;
     margin: 20px auto;
     padding: 16px;
 }
 
-.ruttien-header h2 {
+.naptien-header h2 {
     color: var(--primary-color);
     text-align: center;
 }
 
-.ruttien-card {
+.naptien-card {
     background: #fff;
     border-radius: var(--border-radius);
     padding: 20px;
@@ -80,7 +93,7 @@ export default {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.ruttien-input {
+.naptien-input {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
@@ -89,12 +102,12 @@ export default {
     font-size: 16px;
 }
 
-.ruttien-input:hover {
+.naptien-input:hover {
     background: #e9f5ff;
     border-color: #3c67f3;
 }
 
-.ruttien-button {
+.naptien-button {
     width: 100%;
     background-color: #007bff;
     color: #ffffff;
@@ -147,5 +160,29 @@ export default {
 .btn-gradient:hover {
     opacity: 0.9;
     transform: translateY(-2px);
+}
+
+.menhgia-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.menhgia-group button {
+    flex: 1 1 45%;
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    color: rgb(4, 125, 239);
+    border: 1px solid rgb(4, 125, 239);
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.menhgia-group button:hover {
+    background-color: rgb(4, 125, 239);
+    color: white;
 }
 </style>
