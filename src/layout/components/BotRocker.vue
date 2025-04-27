@@ -2,37 +2,31 @@
     <div class="appBottomMenu">
         <a href="/" class="item">
             <div class="col">
-            <i class="fas fa-home"></i>
-            <strong>Trang chủ</strong>
+                <i class="fas fa-home"></i>
+                <strong>Trang chủ</strong>
             </div>
         </a>
         <a href="/client/dat-xe" class="item">
             <div class="col">
-            <i class="fas fa-car"></i>
-            <strong>Đặt xe</strong>
+                <i class="fas fa-car"></i>
+                <strong>Đặt xe</strong>
             </div>
         </a>
-        <a href="/client/lich-su-chuyen-xe" class="item">
+        <a href="/Client/lich-su-chuyen-xe" class="item">
             <div class="col">
-            <i class="fas fa-clock"></i>
-            <strong>Lịch sử</strong>
-            </div>
-        </a>
-        <a href="/ho-tro" class="item">
-            <div class="col">
-            <i class="fas fa-headset"></i>
-            <strong>Hỗ trợ</strong>
+                <i class="fas fa-clock"></i>
+                <strong>Lịch sử</strong>
             </div>
         </a>
         <a href="/client/profile" class="item">
             <div class="col">
                 <i class="fa-solid fa-user"></i>
-            <strong>Tôi</strong>
+                <strong>Tôi</strong>
             </div>
         </a>
     </div>
 </template>
-<script >
+<script>
 export default {
     data() {
         return {
@@ -43,7 +37,6 @@ export default {
 }
 </script>
 <style scoped>
-
 .appBottomMenu {
     background: radial-gradient(circle at center, #1e90ff, #0066cc);
     display: flex;

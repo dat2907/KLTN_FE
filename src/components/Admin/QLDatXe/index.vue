@@ -25,40 +25,47 @@
                                         <th class="align-middle text-center ">Điểm Đón</th>
                                         <th class="align-middle text-center ">Điểm Đến</th>
                                         <th class="align-middle text-center ">Giá Tiền</th>
-                                        <th class="align-middle text-center">Số điện thoại</th>
+                                        <th class="align-middle text-center">Biển số</th>
                                         <th class="align-middle text-center ">Loại Xe</th>
-                                        <th class="align-middle text-center ">Ngày Tháng</th>
+                                        <th class="align-middle text-center ">Số Km</th>
                                         <th class="align-middle text-center">Trạng thái</th>
                                         <th class="align-middle text-center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td class="align-middle text-center">1</td>
-                                        <td class="align-middle text-center">VH-1111</td>
-                                        <td class="align-middle text-center">Trần Văn Hóa</td>
-                                        <td class="align-middle text-center">Cẩm Lệ</td>
-                                        <td class="align-middle text-center">New Phương Đông</td>
-                                        <td class="align-middle text-center">1.000.000đ</td>
-                                        <td class="align-middle text-center">0395677407</td>
-                                        <td class="align-middle text-center">Xe Máy</td>
-                                        <td class="align-middle text-center">11/04/2025</td>
-                                        <td class="align-middle text-center">
-                                            <div class="d-flex justify-content-center gap-2">
-                                                <button class="btn btn-success me-2">Đang hoạt động</button>
-                                                <button class="btn btn-danger">Tạm Ngừng </button>
-                                            </div>
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <div class="d-flex justify-content-center gap-2">
-                                                <button class="btn btn-primary me-2" data-bs-toggle="modal"
-                                                    data-bs-target="#Capnhatkhachhang">Cập nhật</button>
-                                                <button class="btn btn-danger" data-bs-toggle="modal"
-                                                    data-bs-target="#xoaKhachhang"><i class="fa-solid fa-trash"></i>Xóa
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    <template v-for="(value, index) in list" :key="index">
+                                        <tr>
+                                            <td class="align-middle text-center">{{ index + 1 }}</td>
+                                            <td class="align-middle text-center">{{ value.Ma_id }}</td>
+                                            <td class="align-middle text-center">{{ value.ho_ten }}</td>
+                                            <td class="align-middle text-center">{{ value.DiaDiemDon }}</td>
+                                            <td class="align-middle text-center">{{ value.DiaDiemDen }}</td>
+                                            <td class="align-middle text-center">{{ value.GiaTien }}</td>
+                                            <td class="align-middle text-center">{{ value.BienSo }}</td>
+                                            <td class="align-middle text-center">{{ value.LoaiXe }}</td>
+                                            <td class="align-middle text-center">{{ value.SoKm }}</td>
+                                            <td class="align-middle text-center">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <button v-if="value.TrangThai"
+                                                        v-on:click="actionDoiTrangThaiDatXe(value)"
+                                                        class="btn btn-success me-2">Đã hoàn thành</button>
+                                                    <button v-else v-on:click="actionDoiTrangThaiDatXe(value)"
+                                                        class="btn btn-danger">Chưa hoàn thành </button>
+                                                </div>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <button v-on:click="Object.assign(edit_dat_xe, value)"
+                                                        class="btn btn-primary me-2" data-bs-toggle="modal"
+                                                        data-bs-target="#Capnhatdatxe">Cập nhật</button>
+                                                    <button v-on:click="Object.assign(delete_dat_xe, value)"
+                                                        class="btn btn-danger" data-bs-toggle="modal"
+                                                        data-bs-target="#xoadatxe"><i class="fa-solid fa-trash"></i>Xóa
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </template>
                                 </tbody>
                             </table>
                         </div>
@@ -72,9 +79,8 @@
                 </div>
             </div>
         </div>
-        <!-- Modal Capnhatkhachhang -->
-        <div class="modal fade" id="Capnhatkhachhang" tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
+        <!-- Modal Capnhatdatxe -->
+        <div class="modal fade" id="Capnhatdatxe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -82,18 +88,38 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
+                        <label><b>Mã đơn</b></label>
+                        <input v-model="edit_dat_xe.Ma_id" type="text" class="form-control mb-2"
+                            placeholder="Nhập mã đơn">
+
                         <label><b>Họ và tên</b></label>
-                        <input type="text" class="form-control mb-2" placeholder="Nhập họ và tên">
-                        <label><b>Số điện thoại</b></label>
-                        <input type="text" class="form-control mb-2" placeholder="Nhập Số điện thoại">
-                        <label><b>Email</b></label>
-                        <input type="text" class="form-control mb-2" placeholder="Nhập Email">
-                        <label><b>Tên tài khoản</b></label>
-                        <input type="text" class="form-control mb-2" placeholder="Nhập Tên tài khoản">
-                        <label><b>Mật khẩu</b></label>
-                        <input type="text" class="form-control mb-2" placeholder="Nhập Mật khẩu">
-                        <label><b>Ví Tiền</b></label>
-                        <input type="text" class="form-control mb-2" placeholder="Nhập số dư">
+                        <input v-model="edit_dat_xe.ho_ten" type="text" class="form-control mb-2"
+                            placeholder="Nhập họ và tên">
+
+                        <label><b>Điểm đón</b></label>
+                        <input v-model="edit_dat_xe.DiaDiemDon" type="text" class="form-control mb-2"
+                            placeholder="Nhập địa điểm đón">
+
+                        <label><b>Điểm đến</b></label>
+                        <input v-model="edit_dat_xe.DiaDiemDen" type="text" class="form-control mb-2"
+                            placeholder="Nhập địa điểm đến">
+
+                        <label><b>Giá tiền</b></label>
+                        <input v-model="edit_dat_xe.GiaTien" type="text" class="form-control mb-2"
+                            placeholder="Nhập giá tiền">
+
+                        <label><b>Biển số</b></label>
+                        <input v-model="edit_edit_dat_xe.BienSo" type="text" class="form-control mb-2"
+                            placeholder="Nhập biển số">
+
+                        <label><b>Loại Xe</b></label>
+                        <input v-model="edit_edit_dat_xe.LoaiXe" type="text" class="form-control mb-2"
+                            placeholder="Nhập loại xe">
+
+                        <label><b>Số Km</b></label>
+                        <input v-model="edit_edit_dat_xe.SoKm" type="text" class="form-control mb-2"
+                            placeholder="Số km">
+
                         <label><b>Trạng thái</b></label>
                         <select class="form-control mb-2">
                             <option value="1">Đang hoạt động</option>
@@ -102,13 +128,14 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                        <button type="button" class="btn btn-primary">Cập nhật thông tin</button>
+                        <button v-on:click="actionCapNhatDatXe()" type="button" class="btn btn-primary">Xác
+                            nhận</button>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- modal xóa khach hang -->
-        <div class="modal fade" id="xoaKhachhang" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- modal xóa dat xe -->
+        <div class="modal fade" id="xoadatxe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -120,27 +147,26 @@
                             <div class="d-flex align-items-center">
                                 <div class="font-35 text-white"><i class="bx bxs-message-square-x"></i>
                                 </div>
-                                <div class="ms-1">
-                                    <h6 class="mb-1 text-white">Bạn chắc chắc xóa tài khoản khách hàng này chứ
-                                        !!!</h6>
-                                    <div class="text-white text-nowrap"><b>LƯU Ý !!!</b> Điều này không thể khôi
-                                        phục
-                                        khi ấn xác nhận
-                                    </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-0 text-white">Cảnh Báo!</h6>
+                                    <div class="text-white">Bạn Có chắc chắn xóa đơn đặt xe không <b>{{
+                                        delete_dat_xe.Ma_id
+                                            }}</b> này không!</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Xóa</button>
+                        <button v-on:click="actionXoaDatXe()" type="button" class="btn btn-danger"
+                            data-bs-dismiss="modal">Xác
+                            nhận</button>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- modal Thêm mới khách hàng -->
-        <div class="modal fade" id="themmoikhachhang" tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
+        <!-- modal Thêm mới dat xe -->
+        <div class="modal fade" id="themmoidatxe" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -169,8 +195,86 @@
     </div>
 </template>
 <script>
+import axios from 'axios';
 export default {
+    data() {
+        return {
+            ql_dat_xe: [],
+            edit_dat_xe: {},
+            delete_dat_xe: {}
+        }
+    },
+    mounted() {
+        this.loadDataDatXe();
+    },
+    methods: {
+        loadDataDatXe() {
+            axios
+                .get('http://127.0.0.1:8000/api/admin/get-data', {
+                    headers: {
+                        Authorization: 'Bearer ' + localStorage.getItem("token_admin")
+                    }
+                })
+                .then((res) => {
+                    this.list = res.data.data;
+                })
+        },
+        actionDoiTrangThaiDatXe(value) {
+            axios
+                .post('http://127.0.0.1:8000/api/admin/chuyen-xe/doi-trang-thai', value, {
+                    headers: {
+                        Authorization: 'Bearer ' + localStorage.getItem("token_admin")
+                    }
+                })
+                .then((res) => {
+                    if (res.data.status) {
+                        var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
+                        this.$toast.success(thong_bao);
+                        this.loadDataDatXe();
+                    } else {
+                        var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
+                        this.$toast.error(thong_bao);
+                    }
+                })
+        },
+        actionCapNhatDatXe() {
+            axios
+                .post('http://127.0.0.1:8000/api/admin/cap-nhat-don-dat-xe', this.edit_dat_xe, {
+                    headers: {
+                        Authorization: 'Bearer ' + localStorage.getItem("token_admin")
+                    }
+                })
+                .then((res) => {
+                    if (res.data.status) {
+                        var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
+                        this.$toast.success(thong_bao);
+                        this.loadDataDatXe();
+                    } else {
+                        var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
+                        this.$toast.error(thong_bao);
+                    }
+                })
+        },
 
+        actionXoaDatXe() {
+            axios
+                .post('http://127.0.0.1:8000/api/admin/xoa-don-dat-xe', this.delete_dat_xe, {
+                    headers: {
+                        Authorization: 'Bearer ' + localStorage.getItem("token_admin")
+                    }
+                })
+                .then((res) => {
+                    if (res.data.status) {
+                        var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
+                        this.$toast.success(thong_bao);
+                        this.loadDataDatXe();
+                    } else {
+                        var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
+                        this.$toast.error(thong_bao);
+                    }
+                })
+        },
+    },
 }
 </script>
 <style scoped>

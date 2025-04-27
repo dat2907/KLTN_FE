@@ -25,9 +25,8 @@
                             <div class="col-lg-4">
                                 <div class="card h-100">
                                     <div class="card-body d-flex flex-column align-items-center text-center">
-                                        <img src="../../../assets/img/avatar2.jpeg"
-                                            class="rounded-circle p-1 mb-3" alt="Avatar"
-                                            style="width: 140px; height: 140px;" />
+                                        <img src="../../../assets/img/avatar2.jpeg" class="rounded-circle p-1 mb-3"
+                                            alt="Avatar" style="width: 140px; height: 140px;" />
                                         <h5 class="mb-1">{{ profile.ho_ten }}</h5>
                                         <p class="text-muted mb-0">Tài xế</p>
                                         <p class="text-secondary small">{{ profile.dia_chi }}</p>
@@ -58,6 +57,31 @@
                                             <label class="form-label">Địa Chỉ</label>
                                             <input type="text" class="form-control" v-model="profile.dia_chi"
                                                 placeholder="Nhập địa chỉ" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">CCCD</label>
+                                            <input type="text" class="form-control" v-model="profile.cccd"
+                                                placeholder="Nhập cccd" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Loại xe</label>
+                                            <input type="text" class="form-control" v-model="profile.loai_xe"
+                                                placeholder="Nhập loại xe" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Biển số</label>
+                                            <input type="text" class="form-control" v-model="profile.bien_so"
+                                                placeholder="Nhập biển số xe" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Bằng lái xe</label>
+                                            <input type="text" class="form-control" v-model="profile.bang_lai_xe"
+                                                placeholder="Nhập Bằng lái xe" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Ngân hàng</label>
+                                            <input type="text" class="form-control" v-model="profile.ngan_hang"
+                                                placeholder="Nhập ngân hàng" />
                                         </div>
                                         <div class="text-end">
                                             <button v-on:click="updateProfile()" type="button"
@@ -172,7 +196,7 @@ export default {
                     if (res.data.status) {
                         var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
                         this.$toast.success(thong_bao);
-                        this.$router.push('/client/dang-nhap')
+                        this.$router.push('/tai-xe-chay-dich-vu/dang-nhap-tai-xe')
                     } else {
                         var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
                         this.$toast.error(thong_bao);
@@ -269,7 +293,7 @@ export default {
     padding: 10px 20px;
     font-weight: 600;
     border-radius: 8px;
-    
+
 }
 
 .btn:hover {
@@ -287,7 +311,8 @@ export default {
         flex-direction: column;
     }
 
-    .col-lg-4, .col-lg-8 {
+    .col-lg-4,
+    .col-lg-8 {
         width: 100%;
         margin-bottom: 20px;
     }

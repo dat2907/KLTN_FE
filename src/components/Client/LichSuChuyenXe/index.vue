@@ -4,7 +4,7 @@
             <div class="col-2"></div>
             <div class="col-8">
                 <div class="card-header">
-                        <h3 class="text-center align-middle"><b>Lịch Sử Chuyến Xe</b></h3>
+                    <h3 class="text-center align-middle"><b>Lịch Sử Chuyến Xe</b></h3>
                 </div>
             </div>
         </div>
@@ -15,7 +15,7 @@
                     <div class="d-flex align-items-center gap-3">
                         <i class="fa-solid fa-car-side fa-3x text-primary"></i>
                         <div>
-                            <h5 class="fw-bold">{{ v.ThoiGian }}</h5>
+                            <p class="mb-0">Điểm đón: {{ v.DiaDiemDon }}</p>
                             <p class="mb-0">Điểm đến: {{ v.DiaDiemDen }}</p>
                             <span class="badge bg-success">Đã hoàn thành</span>
                         </div>
@@ -30,23 +30,23 @@
                             <h4 class="mb-1 fw-bold"><strong>Tài xế: </strong>{{ v.TaiXe }}</h4>
                         </div>
                         <div class="card bg-dark text-white mt-5">
-							<img src="https://png.pngtree.com/png-vector/20220715/ourmid/pngtree-taxi-order-vehicle-rent-car-png-image_5926433.png" height="400px" class="card-img" alt="...">
-							<div class="card-img-overlay">
-								<h5 class="card-title text-white">Lịch Sử Chuyến Xe</h5>
-								<!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <img src="https://png.pngtree.com/png-vector/20220715/ourmid/pngtree-taxi-order-vehicle-rent-car-png-image_5926433.png"
+                                height="400px" class="card-img" alt="...">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title text-white">Lịch Sử Chuyến Xe</h5>
+                                <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 								<p class="card-text">Last updated 3 mins ago</p> -->
-							</div>
-						</div>
+                            </div>
+                        </div>
                     </div>
                     <hr>
                     <div class="row">
                         <div class="col-md-6">
-                            <p><strong>Biển số: </strong> {{ v.BienSo }}</p>
-                            <p><strong>Thời gian: </strong> {{ v.ThoiGian }}</p>
-                            <p><strong>Địa điểm đón: </strong>{{ v.DiaDiemDon }}</p>
+                            <p><strong>Loại xe: </strong> {{ v.LoaiXe }}</p>
+                            <p><strong>Địa điểm đón: </strong> {{ v.DiaDiemDon }}</p>
+                            <p><strong>Địa điểm đón: </strong>{{ v.DiaDiemDen }}</p>
                         </div>
                         <div class="col-md-6">
-                            <p><strong>Địa điểm đến: </strong>{{ v.DiaDiemDen }}</p>
                             <p><strong>Quãng đường: </strong>{{ v.SoKm }}</p>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                     <h5 class="fw-bold">Thông tin thanh toán</h5>
                     <p><strong>Giá tiền:</strong> <span class="text-success fw-bold">{{ v.GiaTien }}</span></p>
                     <p><strong>Hình thức thanh toán:</strong> <span class="text-primary">{{ v.HinhThucThanhToan
-                    }}</span></p>
+                            }}</span></p>
                 </div>
             </div>
             <div class="col-2"></div>
@@ -96,4 +96,3 @@ export default {
 }
 </script>
 <style></style>
-

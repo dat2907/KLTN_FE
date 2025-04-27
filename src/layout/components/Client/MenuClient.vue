@@ -15,16 +15,16 @@
                     </div>
                     <!-- * profile box -->
                     <!-- balance -->
-                    <div class="sidebar-balance">
+                    <!-- <div class="sidebar-balance">
                         <div class="listview-title">Tài Khoản</div>
                         <div class="in">
                             <h1 class="amount">500.000đ</h1>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- * balance -->
 
                     <!-- action group -->
-                    <div class="action-group">
+                    <!-- <div class="action-group">
                         <a href="/client/nap-tien" class="action-button">
                             <div class="in">
                                 <div class="iconbox">
@@ -49,11 +49,11 @@
                                 Thẻ của tôi
                             </div>
                         </a>
-                    </div>
+                    </div> -->
                     <!-- * action group -->
 
                     <!-- menu -->
-                    <div class="listview-title mt-1">Tùy Chọn</div>
+                    <div class="listview-title mt-1">Danh Mục</div>
                     <!-- <ul class="listview flush transparent no-line image-listview">
                         <li>
                             <a href="index.html" class="item">
@@ -97,11 +97,11 @@
                     <!-- <div class="listview-title mt-1">Khác</div> -->
                     <ul class="listview flush transparent no-line image-listview">
                         <li>
-                            <a href="/client/cai-dat" class="item">
+                            <a href="/client/profile" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-cogs"></i>
                                 </div>
-                                <div class="in">Cài đặt</div>
+                                <div class="in">Profile</div>
                             </a>
                         </li>
                         <li>
@@ -110,6 +110,22 @@
                                     <i class="fas fa-comment-dots"></i>
                                 </div>
                                 <div class="in">Hỗ trợ</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/client/thanh-toan" class="item">
+                                <div class="icon-boxx ">
+                                    <i class="fas fa-comment-dots"></i>
+                                </div>
+                                <div class="in">Thanh Toán</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Client/theo-doi-chuyen-di" class="item">
+                                <div class="icon-boxx ">
+                                    <i class="fas fa-comment-dots"></i>
+                                </div>
+                                <div class="in">Theo dõi chuyến đi</div>
                             </a>
                         </li>
                         <li>
@@ -130,78 +146,86 @@
 export default {};
 </script>
 <style scoped>
-    #sidebarPanel .modal-content {
+#sidebarPanel .modal-content {
     background: #fff;
     color: #000;
-    }
+}
 
-    .sidebar-balance,
-    .action-group {
+.sidebar-balance,
+.action-group {
     background: linear-gradient(135deg, #1e90ff, #007bff);
     color: #fff;
     padding: 15px;
-    }
-    .action-group icon {
+}
+
+.action-group icon {
     color: #fff;
     font-size: 20px;
-    }
+}
+
+.icon-box {
     .icon-box {
-        .icon-box {
-    display: flex;
-    justify-content: center; /* Căn giữa theo chiều ngang */
-    align-items: center;     /* Căn giữa theo chiều dọc */
-    color: #fff;
-    width: 50px;             /* hoặc giá trị phù hợp với giao diện bạn */
-    height: 50px;
-    }
-    }
-
-    .icon-boxx {
         display: flex;
-        align-items: center;
         justify-content: center;
-        width: 44px;
-        height: 36px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #1e90ff, #007bff);
-        color: #fff;
-        font-size: 20px;
-    }
-
-    .item {
-        display: flex;
+        /* Căn giữa theo chiều ngang */
         align-items: center;
+        /* Căn giữa theo chiều dọc */
+        color: #fff;
+        width: 50px;
+        /* hoặc giá trị phù hợp với giao diện bạn */
+        height: 50px;
     }
+}
 
-    .item icon-boxx {
-        flex-shrink: 0;
-    }
+.icon-boxx {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e90ff, #007bff);
+    color: #fff;
+    font-size: 20px;
+}
 
-    .item .in {
-        margin-left: 12px;
-    }
-    #sidebarPanel .item:hover {
+.item {
+    display: flex;
+    align-items: center;
+}
+
+.item icon-boxx {
+    flex-shrink: 0;
+}
+
+.item .in {
+    margin-left: 12px;
+}
+
+#sidebarPanel .item:hover {
     background-color: rgba(0, 123, 255, 0.1);
     border-radius: 10px;
-    }
-    .listview-title {
+}
+
+.listview-title {
     padding: 12px 20px 0;
     font-weight: 600;
     font-size: 1rem;
-    }
-    .badge {
-        background: linear-gradient(135deg, #1e90ff, #007bff);
-        color: white;
-        padding: 5px 5px;
-        border-radius: 50%;
-        font-size: 14px;
-    }
-    a {
-  text-decoration: none;
+}
+
+.badge {
+    background: linear-gradient(135deg, #1e90ff, #007bff);
+    color: white;
+    padding: 5px 5px;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
 }
 
 a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
 </style>
-
