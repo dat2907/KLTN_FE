@@ -1,5 +1,5 @@
 <template>
-    
+
     <div class="container mt-2">
         <div class="row">
             <div class="card rounded-4">
@@ -16,16 +16,17 @@
                     <div class="card-header custom-header">
                         <h3><i class="fa-solid fa-users me-2"></i><b>Thông tin khách hàng</b></h3>
                     </div>
-                    
+
 
                     <div class="card-body">
                         <div class="search-bar-wrapper mb-3">
-                        <div class="input-group">
-                            <span class="input-group-text bg-white border-end-0"><i class="bx bx-search"></i></span>
-                            <input type="text" class="form-control border-start-0" placeholder="Tìm kiếm khách hàng...">
-                            <button class="btn " type="button"></button>
+                            <div class="input-group">
+                                <span class="input-group-text bg-white border-end-0"><i class="bx bx-search"></i></span>
+                                <input type="text" class="form-control border-start-0"
+                                    placeholder="Tìm kiếm khách hàng...">
+                                <button class="btn " type="button"></button>
+                            </div>
                         </div>
-                    </div>
                         <table class="table table-bordered table-hover mb-1">
                             <thead>
                                 <tr>
@@ -275,7 +276,6 @@ export default {
 }
 </script>
 <style>
-
 .custom-header {
     background: linear-gradient(135deg, #00c6ff, #0072ff);
     color: white;

@@ -2,20 +2,20 @@
     <div class="appBottomMenu">
         <a href="/" class="item">
             <div class="col">
-            <i class="fas fa-home"></i>
-            <strong>Trang chủ</strong>
+                <i class="fas fa-home"></i>
+                <strong>Trang chủ</strong>
             </div>
         </a>
-        <a href="/taixechaydichvu/nhan-chuyen-xe" class="item">
+        <a href="/tai-xe-chay-dich-vu/nhan-chuyen-xe" class="item">
             <div class="col">
-            <i class="fas fa-car"></i>
-            <strong>Nhận chuyến</strong>
+                <i class="fas fa-car"></i>
+                <strong>Nhận chuyến</strong>
             </div>
         </a>
-        <a href="/client/lich-su-chuyen-xe" class="item">
+        <a href="/tai-xe-chay-dich-vu/lich-su-chuyen-xe" class="item">
             <div class="col">
-            <i class="fas fa-clock"></i>
-            <strong>Lịch sử</strong>
+                <i class="fas fa-clock"></i>
+                <strong>Lịch sử</strong>
             </div>
         </a>
         <!-- <a href="/ho-tro" class="item">
@@ -24,15 +24,15 @@
             <strong>Hỗ trợ</strong>
             </div>
         </a> -->
-        <a href="/taixechaydichvu/profile-taixe" class="item">
+        <a href="/tai-xe-chay-dich-vu/profile-tai-xe" class="item">
             <div class="col">
                 <i class="fa-solid fa-user"></i>
-            <strong>Tôi</strong>
+                <strong>Tôi</strong>
             </div>
         </a>
     </div>
 </template>
-<script >
+<script>
 export default {
     data() {
         return {
@@ -43,7 +43,6 @@ export default {
 }
 </script>
 <style scoped>
-
 .appBottomMenu {
     background: radial-gradient(circle at center, #1e90ff, #0066cc);
     display: flex;

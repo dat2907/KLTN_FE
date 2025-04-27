@@ -28,7 +28,7 @@
 
                     <!-- action group -->
                     <div class="action-group">
-                        <a href="/taixechaydichvu/nap-tien" class="action-button">
+                        <a href="/tai-xe-chay-dich-vu/nap-tien" class="action-button">
                             <div class="in">
                                 <div class="iconbox">
                                     <i class="fa fa-plus"></i>
@@ -36,7 +36,7 @@
                                 Nạp
                             </div>
                         </a>
-                        <a href="/taixechaydichvu/rut-tien" class="action-button">
+                        <a href="/tai-xe-chay-dich-vu/rut-tien" class="action-button">
                             <div class="in">
                                 <div class="iconbox">
                                     <i class="fa fa-arrow-down"></i>
@@ -52,7 +52,7 @@
                                 Gửi
                             </div>
                         </a> -->
-                        <a href="/taixechaydichvu/nap-tien" class="action-button">
+                        <a href="/tai-xe-chay-dich-vu/vi-tien-tai-xe" class="action-button">
                             <div class="in">
                                 <div class="iconbox">
                                     <i class="fa fa-credit-card"></i>
@@ -64,41 +64,41 @@
                     <!-- * action group -->
 
                     <!-- menu -->
-                    <div class="listview-title mt-1">Tùy Chọn</div>
+                    <div class="listview-title mt-1">Danh Mục</div>
                     <ul class="listview flush transparent no-line image-listview">
                         <li>
-                            <a href="index.html" class="item">
+                            <a href="/tai-xe-chay-dich-vu/lich-su-chuyen-xe" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-chart-pie"></i>
                                 </div>
                                 <div class="in">
-                                    Tổng quan
+                                    Lịch sử chuyến xe
                                     <span class="badge">10</span>
                                 </div>
                             </a>
                         </li>
                         <li>
-                            <a href="app-pages.html" class="item">
+                            <a href="/tai-xe-chay-dich-vu/nhan-chuyen-xe" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-file-alt"></i>
                                 </div>
-                                <div class="in">Trang</div>
+                                <div class="in">Nhận chuyến xe</div>
                             </a>
                         </li>
                         <li>
-                            <a href="app-components.html" class="item">
+                            <a href="/tai-xe-chay-dich-vu/profile-tai-xe" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-th-large"></i>
                                 </div>
-                                <div class="in">Thành phần</div>
+                                <div class="in">Profile</div>
                             </a>
                         </li>
                         <li>
-                            <a href="app-cards.html" class="item">
+                            <a href="/tai-xe-chay-dich-vu/vi-tien-tai-xe" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-credit-card"></i>
                                 </div>
-                                <div class="in">Thẻ của tôi</div>
+                                <div class="in">Ví của tôi</div>
                             </a>
                         </li>
                     </ul>
@@ -141,64 +141,68 @@
 export default {};
 </script>
 <style scoped>
-    #sidebarPanel .modal-content {
+#sidebarPanel .modal-content {
     background: #fff;
     color: #000;
-    }
+}
 
-    .sidebar-balance,
-    .action-group {
+.sidebar-balance,
+.action-group {
     background: linear-gradient(135deg, #1e90ff, #007bff);
     color: #fff;
     padding: 15px;
-    }
-    .action-group icon {
+}
+
+.action-group icon {
     color: #fff;
     font-size: 20px;
-    }
-    .icon-box {
+}
+
+.icon-box {
     color: #fff;
-    }
+}
 
-    .icon-boxx {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 36px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #1e90ff, #007bff);
-        color: #fff;
-        font-size: 20px;
-    }
+.icon-boxx {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1e90ff, #007bff);
+    color: #fff;
+    font-size: 20px;
+}
 
-    .item {
-        display: flex;
-        align-items: center;
-    }
+.item {
+    display: flex;
+    align-items: center;
+}
 
-    .item icon-boxx {
-        flex-shrink: 0;
-    }
+.item icon-boxx {
+    flex-shrink: 0;
+}
 
-    .item .in {
-        margin-left: 12px;
-    }
-    #sidebarPanel .item:hover {
+.item .in {
+    margin-left: 12px;
+}
+
+#sidebarPanel .item:hover {
     background-color: rgba(0, 123, 255, 0.1);
     border-radius: 10px;
-    }
-    .listview-title {
+}
+
+.listview-title {
     padding: 12px 20px 0;
     font-weight: 600;
     font-size: 1rem;
-    }
-    .badge {
-        background: linear-gradient(135deg, #1e90ff, #007bff);
-        color: white;
-        padding: 5px 5px;
-        border-radius: 50%;
-        font-size: 14px;
-    }
-</style>
+}
 
+.badge {
+    background: linear-gradient(135deg, #1e90ff, #007bff);
+    color: white;
+    padding: 5px 5px;
+    border-radius: 50%;
+    font-size: 14px;
+}
+</style>
