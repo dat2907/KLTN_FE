@@ -49,6 +49,11 @@ const routes = [
     component: () => import("../components/Admin/MaGiamGia/index.vue"),
     meta: { layout: "admin" },
   },
+  {
+    path: "/admin/thong-ke",
+    component: () => import("../components/Admin/ThongKeKH/index.vue"),
+    meta: { layout: "admin" },
+  },
 
   //Client
   {
@@ -141,6 +146,12 @@ const routes = [
     path: "/taixechaydichvu/nap-tien",
     component: () =>
       import("../components/TaiXeChayDichVu/ViTienTaiXe/nap.vue"),
+    meta: { layout: "taixe" },
+  },
+  {
+    path: "/taixechaydichvu/lich-su-giao-dich",
+    component: () =>
+      import("../components/TaiXeChayDichVu/ViTienTaiXe/lichsunaprut.vue"),
     meta: { layout: "taixe" },
   },
   {

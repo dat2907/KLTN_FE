@@ -9,7 +9,7 @@
                             <img src="../../../assets/img/BiaClient.png" alt="image" class="imaged w36" />
                         </div>
                         <div class="in">
-                            <strong>Tên tài khoản</strong>
+                            <strong>Admin</strong>
                             <div class="text-muted">id:022324124</div>
                         </div>
                         <a href="#" class="btn btn-link btn-icon sidebar-close" data-bs-dismiss="modal">
@@ -21,7 +21,7 @@
                     <div class="sidebar-balance">
                         <div class="listview-title">Tài Khoản</div>
                         <div class="in">
-                            <h1 class="amount">500.000đ</h1>
+                            <h1 class="amount">0đ</h1>
                         </div>
                     </div>
                     <!-- * balance -->
@@ -52,14 +52,6 @@
                                 Gửi
                             </div>
                         </a> -->
-                        <a href="app-cards.html" class="action-button">
-                            <div class="in">
-                                <div class="iconbox">
-                                    <i class="fa fa-credit-card"></i>
-                                </div>
-                                Thẻ của tôi
-                            </div>
-                        </a>
                     </div>
                     <!-- * action group -->
 
@@ -67,38 +59,46 @@
                     <div class="listview-title mt-1">Tùy Chọn</div>
                     <ul class="listview flush transparent no-line image-listview">
                         <li>
-                            <a href="index.html" class="item">
+                            <a href="khach-hang" class="item">
                                 <div class="icon-boxx">
-                                    <i class="fas fa-chart-pie"></i>
+                                    <i class="fa-solid fa-user-tie"></i>
                                 </div>
                                 <div class="in">
-                                    Tổng quan
-                                    <span class="badge">10</span>
+                                    Thông tin khách hàng
+                                    <span class="badge"></span>
                                 </div>
                             </a>
                         </li>
                         <li>
-                            <a href="app-pages.html" class="item">
+                            <a href="ma-giam-gia" class="item">
                                 <div class="icon-boxx">
-                                    <i class="fas fa-file-alt"></i>
+                                    <i class="fa-solid fa-ticket-simple"></i>
                                 </div>
-                                <div class="in">Trang</div>
+                                <div class="in">Mã Giảm Giá</div>
                             </a>
                         </li>
                         <li>
-                            <a href="app-components.html" class="item">
+                            <a href="danh-sach-dat-xe" class="item">
                                 <div class="icon-boxx">
-                                    <i class="fas fa-th-large"></i>
+                                    <i class="fa-solid fa-list"></i>
                                 </div>
-                                <div class="in">Thành phần</div>
+                                <div class="in">Danh Sách Đơn Đặt Xe</div>
                             </a>
                         </li>
                         <li>
-                            <a href="app-cards.html" class="item">
+                            <a href="tai-xe" class="item">
                                 <div class="icon-boxx">
-                                    <i class="fas fa-credit-card"></i>
+                                    <i class="fa-solid fa-bars-progress"></i>
                                 </div>
-                                <div class="in">Thẻ của tôi</div>
+                                <div class="in">Quản Lý Tài Xế</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="thong-ke" class="item">
+                                <div class="icon-boxx">
+                                    <i class="fa-solid fa-chart-pie"></i>
+                                </div>
+                                <div class="in">Thống Kê</div>
                             </a>
                         </li>
                     </ul>
@@ -108,23 +108,7 @@
                     <div class="listview-title mt-1">Khác</div>
                     <ul class="listview flush transparent no-line image-listview">
                         <li>
-                            <a href="app-settings.html" class="item">
-                                <div class="icon-boxx">
-                                    <i class="fas fa-cogs"></i>
-                                </div>
-                                <div class="in">Cài đặt</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="component-messages.html" class="item">
-                                <div class="icon-boxx ">
-                                    <i class="fas fa-comment-dots"></i>
-                                </div>
-                                <div class="in">Hỗ trợ</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="app-login.html" class="item">
+                            <a href="dang-nhap" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-sign-out-alt"></i>
                                 </div>

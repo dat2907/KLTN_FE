@@ -1,6 +1,6 @@
 <template>
     <div class="appBottomMenu">
-        <a href="/homepage/trang-chu" class="item">
+        <a href="/client/trang-chu" class="item">
             <div class="col">
             <i class="fas fa-home"></i>
             <strong>Trang chủ</strong>

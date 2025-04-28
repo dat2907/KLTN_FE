@@ -12,7 +12,7 @@
             <strong>Nhận chuyến</strong>
             </div>
         </a>
-        <a href="/client/lich-su-chuyen-xe" class="item">
+        <a href="/admin/lich-su-chuyen-xe" class="item">
             <div class="col">
             <i class="fas fa-clock"></i>
             <strong>Lịch sử</strong>

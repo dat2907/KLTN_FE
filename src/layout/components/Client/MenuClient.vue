@@ -13,47 +13,10 @@
                             <div class="text-muted">id:022324124</div>
                         </div>
                     </div>
-                    <!-- * profile box -->
-                    <!-- balance -->
-                    <div class="sidebar-balance">
-                        <div class="listview-title">Tài Khoản</div>
-                        <div class="in">
-                            <h1 class="amount">500.000đ</h1>
-                        </div>
-                    </div>
-                    <!-- * balance -->
-
-                    <!-- action group -->
-                    <div class="action-group">
-                        <a href="/client/nap-tien" class="action-button">
-                            <div class="in">
-                                <div class="iconbox">
-                                    <i class="fa fa-plus"></i>
-                                </div>
-                                Nạp
-                            </div>
-                        </a>
-                        <a href="/Client/rut-tien" class="action-button">
-                            <div class="in">
-                                <div class="iconbox">
-                                    <i class="fa fa-arrow-down"></i>
-                                </div>
-                                Rút
-                            </div>
-                        </a>
-                        <a href="app-cards.html" class="action-button">
-                            <div class="in">
-                                <div class="iconbox">
-                                    <i class="fa fa-credit-card"></i>
-                                </div>
-                                Thẻ của tôi
-                            </div>
-                        </a>
-                    </div>
-                    <!-- * action group -->
+                   
 
                     <!-- menu -->
-                    <div class="listview-title mt-1">Tùy Chọn</div>
+                    <div class="listview-title mt-1">Khác</div>
                     <!-- <ul class="listview flush transparent no-line image-listview">
                         <li>
                             <a href="index.html" class="item">
@@ -97,6 +60,49 @@
                     <!-- <div class="listview-title mt-1">Khác</div> -->
                     <ul class="listview flush transparent no-line image-listview">
                         <li>
+                            <a href="/client/profile" class="item">
+                                <div class="icon-boxx">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="in">Thông tin cá nhân</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/client/lich-su-chuyen-xe" class="item">
+                                <div class="icon-boxx">
+                                    <i class="fa-solid fa-clock-rotate-left"></i>
+                                </div>
+                                <div class="in">Lịch sử chuyến xe</div>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="/Client/profile" class="item">
+                                <div class="icon-boxx">
+                                    <i class="fa-brands fa-paypal"></i>
+                                </div>
+                                <div class="in">Thanh toán</div>
+                            </a>
+                        </li> -->
+                        <li>
+                            <a href="/Client/theo-doi-chuyen-di" class="item">
+                                <div class="icon-boxx">
+                                    <i class="fa-solid fa-map-pin"></i>
+                                </div>
+                                <div class="in">Theo dõi chuyến đi</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="vi-tien" class="item">
+                                <div class="icon-boxx">
+                                    <i class="fa-solid fa-wallet"></i>
+                                </div>
+                                <div class="in">Ví tiền</div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="listview-title mt-1">Tùy chọn</div>
+                    <ul class="listview flush transparent no-line image-listview"> 
+                        <li>
                             <a href="/client/cai-dat" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-cogs"></i>
@@ -113,7 +119,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="app-login.html" class="item">
+                            <a href="dang-nhap" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-sign-out-alt"></i>
                                 </div>
@@ -145,7 +151,6 @@ export default {};
     color: #fff;
     font-size: 20px;
     }
-    .icon-box {
         .icon-box {
     display: flex;
     justify-content: center; /* Căn giữa theo chiều ngang */
@@ -154,7 +159,7 @@ export default {};
     width: 50px;             /* hoặc giá trị phù hợp với giao diện bạn */
     height: 50px;
     }
-    }
+    
 
     .icon-boxx {
         display: flex;

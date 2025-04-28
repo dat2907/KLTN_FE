@@ -1,110 +1,180 @@
 <template>
-    <div class="row">
-        <div class="card">
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table mb-0">
-                        <thead class="table-light">
-                            <tr>
-                                <th class="text-center text-nowrap">
-                                    <img src="" alt="">
-                                </th>
-                                <th class="text-center text-nowrap">#</th>
-                                <th class="text-center text-nowrap">Hình Ảnh</th>
-                                <th class="text-center text-nowrap">Tên Tài Xế</th>
-                                <th class="text-center text-nowrap">Loại Xe</th>
-                                <th class="text-center text-nowrap">Biển Số</th>
-                                <th class="text-center text-nowrap">Địa Chỉ Đón</th>
-                                <th class="text-center text-nowrap">Địa Chỉ Đến</th>
-                                <th class="text-center text-nowrap">Thời Gian Đặt</th>
-                                <th class="text-center text-nowrap">Thành Tiền</th>
-                                <th class="text-center text-nowrap">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="align-middle text-center">
-                                    <input class="form-check-input" type="checkbox" aria-label="...">
-                                </td>
-                                <td class="align-middle text-center">
-                                    <h6 class="mb-0 font-14">1</h6>
-                                </td>
-                                <td class="text-center align-middle">
-                                    <img src="" style="width: 50px; height: auto;" alt="">
-                                </td>
-                                <td class="align-middle text-center">Tên Tài Xế</td>
-                                <td class="align-middle text-center">Loại Xe</td>
-                                <td class="align-middle text-center">Biển Số</td>
-                                <td class="align-middle text-center">Địa Chỉ Đón</td>
-                                <td class="align-middle text-center">Địa Chỉ Đến</td>
-                                <td class="align-middle text-center">Thời Gian Đặt</td>
-                                <td class="align-middle text-center">Thành Tiền</td>
-                                <td class="text-center align-middle">
-                                    <button class="btn"><i class="fa-solid fa-trash text-danger"></i></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <div class="naptien-wrapper">
+        <div class="naptien-header">
+            <h2>Nạp Tiền</h2>
+        </div>
+
+        <div class="naptien-card">
+            <h5>Thông tin tài khoản</h5>
+            <p><strong>Họ tên:</strong> Tên tài khoản</p>
+            <p><strong>Số dư:</strong> 500.000 VND</p>
+        </div>
+        <div class="payment-method-card">
+            <div class="d-flex justify-content-between align-items-center">
+                <label class="fw-bold mb-2">Phương thức thanh toán</label>
+                <button class="btn-gradient btn-sm" @click="toggleDropdown">
+                    {{ selectedMethod ? selectedMethod : 'Chọn phương thức' }}
+                    <i :class="dropdownVisible ? 'fa fa-chevron-up' : 'fa fa-chevron-down'" class="ms-2"></i>
+                </button>
+            </div>
+
+            <div v-if="dropdownVisible" class="payment-options mt-3">
+                <div class="payment-option" v-for="method in paymentMethods" :key="method"
+                    @click="selectMethod(method)">
+                    {{ method }}
                 </div>
-                <hr>
-                <div class="row mt-3">
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Mã giảm giá</h5>
-                                <div class="d-flex flex-row align-items-center text-nowrap">
-                                    <label class="me-2"><i
-                                            class="fa-xl fa-solid fa-ticket text-danger me-2"></i><b>Voucher:</b></label>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Nhập mã giảm giá">
-                                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Áp
-                                            Dụng</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Chọn phương thức thanh toán</h5>
-                                <select class="form-select" aria-label="Chọn phương thức thanh toán">
-                                    <option value="0">Thanh Toán Online</option>
-                                    <option value="1">Thanh Toán COD</option>
-                                    <option value="2">Thanh Toán Khi Đến Điạ chỉ</option>
-                                    <option value="3">Thanh Toán Bằng Momo</option>
-                                    <option value="4">Thanh Toán Bằng ZaloPay</option>
-                                    <option value="5">Thanh Toán Bằng Thẻ Tín Dụng</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="row mt-4">
-                    <div class="col-6">
-                        <div class="ms-auto">
-                            <h5 class="card-title">Chi tiết thanh toán</h5>
-                            <p><i class="fa-solid fa-money-bill fa-xl me-2"></i><b>Tổng Tiền Hóa Đơn:</b> </p>
-                            <p><i class="fa-solid fa-money-bill-trend-up fa-xl me-2"></i><b>Số Tiền Giảm:</b>
-                            </p>
-                            <p><i class="fa-solid fa-money-bill-transfer me-2"></i><b>Tổng tiền thanh toán:</b> </p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="text-center mt-3">
-                        <button class="btn btn-info btn-lg w-50">
-                            <i class="bi bi-check-circle"></i> Xác nhận & Thanh toán
-                        </button>
-                    </div>
-                </div>
+                <button class="btn btn-secondary mt-2" @click="toggleDropdown">Thu gọn</button>
             </div>
         </div>
+        <div class="naptien-card mt-2">
+            <label>Số tiền cần nạp</label>
+            <!-- Input nhập tiền -->
+            <input type="number" class="naptien-input" v-model="soTien" placeholder="Nhập số tiền">
+            <button class="naptien-button">Nạp Tiền</button>
+        </div>
     </div>
+
 </template>
 <script>
 export default {
-
+    data() {
+        return {
+            dropdownVisible: false,
+            selectedMethod: '',
+            paymentMethods: [
+                'Ví ZaloPay',
+                'Ví ShopeePay',
+                'Ví MoMo',
+                'Thẻ ATM nội địa (VNPay)',
+                'Chuyển khoản QR'
+            ],
+            soTien: ''
+        }
+    },
+    methods: {
+        toggleDropdown() {
+            this.dropdownVisible = !this.dropdownVisible;
+        },
+        selectMethod(method) {
+            this.selectedMethod = method;
+            this.dropdownVisible = false;
+        },
+        chonMenhGia(menhgia) {
+            this.soTien = menhgia;
+        }
+    }
 }
 </script>
-<style></style>
+<style scoped>
+.naptien-wrapper {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 16px;
+}
+
+.naptien-header h2 {
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.naptien-card {
+    background: #fff;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.naptien-input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.naptien-input:hover {
+    background: #e9f5ff;
+    border-color: #3c67f3;
+}
+
+.naptien-button {
+    width: 100%;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.payment-method-card {
+    border-radius: 12px;
+    padding: 16px;
+    background: #f8f9fa;
+}
+
+.payment-option {
+    background: #fff;
+    padding: 10px 16px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.payment-option:hover {
+    background: #e9f5ff;
+    border-color: #3c67f3;
+}
+
+.btn-gradient {
+    background: linear-gradient(135deg, #1e90ff, #007bff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    /* Giúp chữ + icon nằm giữa */
+    justify-content: center;
+    gap: 6px;
+    /* Khoảng cách giữa chữ và icon */
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.btn-gradient:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.menhgia-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.menhgia-group button {
+    flex: 1 1 45%;
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    color: rgb(4, 125, 239);
+    border: 1px solid rgb(4, 125, 239);
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.menhgia-group button:hover {
+    background-color: rgb(4, 125, 239);
+    color: white;
+}
+</style>

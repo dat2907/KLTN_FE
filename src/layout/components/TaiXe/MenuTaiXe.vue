@@ -21,14 +21,14 @@
                     <div class="sidebar-balance">
                         <div class="listview-title">Tài Khoản</div>
                         <div class="in">
-                            <h1 class="amount">500.000đ</h1>
+                            <h1 class="amount">100.000đ</h1>
                         </div>
                     </div>
                     <!-- * balance -->
 
                     <!-- action group -->
                     <div class="action-group">
-                        <a href="/taixechaydichvu/nap-tien" class="action-button">
+                        <a href="nap-tien" class="action-button">
                             <div class="in">
                                 <div class="iconbox">
                                     <i class="fa fa-plus"></i>
@@ -36,7 +36,7 @@
                                 Nạp
                             </div>
                         </a>
-                        <a href="/taixechaydichvu/rut-tien" class="action-button">
+                        <a href="rut-tien" class="action-button">
                             <div class="in">
                                 <div class="iconbox">
                                     <i class="fa fa-arrow-down"></i>
@@ -44,20 +44,12 @@
                                 Rút
                             </div>
                         </a>
-                        <!-- <a href="index.html" class="action-button">
+                        <a href="lich-su-giao-dich" class="action-button" >
                             <div class="in">
                                 <div class="iconbox">
-                                    <i class="fa fa-arrow-right"></i>
+                                    <i class="fa-solid fa-clock-rotate-left"></i>
                                 </div>
-                                Gửi
-                            </div>
-                        </a> -->
-                        <a href="/taixechaydichvu/nap-tien" class="action-button">
-                            <div class="in">
-                                <div class="iconbox">
-                                    <i class="fa fa-credit-card"></i>
-                                </div>
-                                Ví
+                                Lịch Sử
                             </div>
                         </a>
                     </div>
@@ -67,38 +59,30 @@
                     <div class="listview-title mt-1">Tùy Chọn</div>
                     <ul class="listview flush transparent no-line image-listview">
                         <li>
-                            <a href="index.html" class="item">
+                            <a href="dang-ki-tai-xe" class="item">
                                 <div class="icon-boxx">
-                                    <i class="fas fa-chart-pie"></i>
+                                    <i class="fa-solid fa-user"></i>
                                 </div>
                                 <div class="in">
-                                    Tổng quan
-                                    <span class="badge">10</span>
+                                    Đăng kí tài xế
+                                    <span class="badge"></span>
                                 </div>
                             </a>
                         </li>
                         <li>
-                            <a href="app-pages.html" class="item">
+                            <a href="nhan-chuyen-xe" class="item">
                                 <div class="icon-boxx">
-                                    <i class="fas fa-file-alt"></i>
+                                    <i class="fa-solid fa-phone"></i>
                                 </div>
-                                <div class="in">Trang</div>
+                                <div class="in">Nhận chuyến xe</div>
                             </a>
                         </li>
                         <li>
-                            <a href="app-components.html" class="item">
-                                <div class="icon-boxx">
-                                    <i class="fas fa-th-large"></i>
-                                </div>
-                                <div class="in">Thành phần</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="app-cards.html" class="item">
+                            <a href="vi-tien-tai-xe" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-credit-card"></i>
                                 </div>
-                                <div class="in">Thẻ của tôi</div>
+                                <div class="in">Ví tiền</div>
                             </a>
                         </li>
                     </ul>
@@ -112,19 +96,11 @@
                                 <div class="icon-boxx">
                                     <i class="fas fa-cogs"></i>
                                 </div>
-                                <div class="in">Cài đặt</div>
+                                <div class="in">Bảo mật</div>
                             </a>
                         </li>
                         <li>
-                            <a href="component-messages.html" class="item">
-                                <div class="icon-boxx ">
-                                    <i class="fas fa-comment-dots"></i>
-                                </div>
-                                <div class="in">Hỗ trợ</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="app-login.html" class="item">
+                            <a href="dang-nhap-tai-xe" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-sign-out-alt"></i>
                                 </div>
@@ -150,7 +126,6 @@ export default {};
     .action-group {
     background: linear-gradient(135deg, #1e90ff, #007bff);
     color: #fff;
-    padding: 15px;
     }
     .action-group icon {
     color: #fff;

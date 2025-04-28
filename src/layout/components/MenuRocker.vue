@@ -21,7 +21,7 @@
                     <div class="sidebar-balance">
                         <div class="listview-title">Tài Khoản</div>
                         <div class="in">
-                            <h1 class="amount">500.000đ</h1>
+                            <h1 class="amount">100.000đ</h1>
                         </div>
                     </div>
                     <!-- * balance -->
@@ -67,38 +67,46 @@
                     <div class="listview-title mt-1">Tùy Chọn</div>
                     <ul class="listview flush transparent no-line image-listview">
                         <li>
-                            <a href="index.html" class="item">
+                            <a href="client/dat-xe" class="item">
                                 <div class="icon-boxx">
-                                    <i class="fas fa-chart-pie"></i>
+                                    <i class="fa-solid fa-car"></i>
                                 </div>
                                 <div class="in">
-                                    Tổng quan
-                                    <span class="badge">10</span>
+                                    Đặt xe
+                                    <span class="badge"></span>
                                 </div>
                             </a>
                         </li>
                         <li>
-                            <a href="app-pages.html" class="item">
+                            <a href="client/lich-su-chuyen-xe" class="item">
                                 <div class="icon-boxx">
-                                    <i class="fas fa-file-alt"></i>
+                                    <i class="fa-solid fa-clock-rotate-left"></i>
                                 </div>
-                                <div class="in">Trang</div>
+                                <div class="in">Lịch sử chuyến xe</div>
                             </a>
                         </li>
                         <li>
-                            <a href="app-components.html" class="item">
+                            <a href="client/profile" class="item">
                                 <div class="icon-boxx">
-                                    <i class="fas fa-th-large"></i>
+                                    <i class="fa-solid fa-user"></i>
                                 </div>
-                                <div class="in">Thành phần</div>
+                                <div class="in">Thông tin cá nhân</div>
                             </a>
                         </li>
                         <li>
-                            <a href="app-cards.html" class="item">
+                            <a href="Client/ho-tro-khach-hang" class="item">
                                 <div class="icon-boxx">
-                                    <i class="fas fa-credit-card"></i>
+                                    <i class="fa-solid fa-envelope"></i>
                                 </div>
-                                <div class="in">Thẻ của tôi</div>
+                                <div class="in">Hổ trợ</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="admin/thong-ke" class="item">
+                                <div class="icon-boxx">
+                                    <i class="fa-solid fa-chart-pie"></i>
+                                </div>
+                                <div class="in">Thống kê</div>
                             </a>
                         </li>
                     </ul>
@@ -108,7 +116,7 @@
                     <div class="listview-title mt-1">Khác</div>
                     <ul class="listview flush transparent no-line image-listview">
                         <li>
-                            <a href="app-settings.html" class="item">
+                            <a href="client/cai-dat" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-cogs"></i>
                                 </div>
@@ -116,15 +124,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="component-messages.html" class="item">
-                                <div class="icon-boxx ">
-                                    <i class="fas fa-comment-dots"></i>
-                                </div>
-                                <div class="in">Hỗ trợ</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="app-login.html" class="item">
+                            <a href="admin/dang-nhap" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-sign-out-alt"></i>
                                 </div>

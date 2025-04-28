@@ -9,14 +9,16 @@
             <img src="../../assets/img/LOGO_KLTN_CHINH.png" alt="logo" class="logo">
         </div>
         <div class="right">
-            <a href="app-notifications.html" class="headerButton">
+            <!-- <a href="app-notifications.html" class="headerButton">
                 <i class="fas fa-bell"></i>
-                <span class="badge badge-danger">4</span>
-            </a>
-            <a href="app-settings.html" class="headerButton">
-                <img src="https://scontent.fdad3-6.fna.fbcdn.net/v/t39.30808-6/490705266_2434762923545253_3741156639531100455_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=k0HDbQJU6y8Q7kNvwG-j49W&_nc_oc=AdksnyCNVAXoUEoxpbmIsUGR-_kLsEN9aEpOlwTLCCvqHi6kNGWQujngcnimn3-dBCw&_nc_zt=23&_nc_ht=scontent.fdad3-6.fna&_nc_gid=KpTV5wgKkNI69jJruqP24w&oh=00_AfHngLzxuSVcBSiqvpVwCpWlgMtqpSAgNm8kfJjIfjf11w&oe=6806B197" alt="image" class="imaged w32">
-                <span class="badge badge-danger">6</span>
-            </a>
+                <span class="badge badge-danger"></span>
+            </a> -->
+            <!-- <a href="admin/dang-nhap" class="headerButton">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.-Zanaodp4hv0ry2WpuuPfgHaEf&pid=Api&P=0&h=180">
+                <span class="badge badge-danger"></span>
+            </a> -->
+            <button>Đăng Kí</button>
+            <button>Đăng Nhập</button>
         </div>
     </div>
 </template>

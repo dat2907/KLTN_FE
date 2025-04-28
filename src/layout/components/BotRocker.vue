@@ -18,7 +18,7 @@
             <strong>Lịch sử</strong>
             </div>
         </a>
-        <a href="/ho-tro" class="item">
+        <a href="/Client/ho-tro-khach-hang" class="item">
             <div class="col">
             <i class="fas fa-headset"></i>
             <strong>Hỗ trợ</strong>

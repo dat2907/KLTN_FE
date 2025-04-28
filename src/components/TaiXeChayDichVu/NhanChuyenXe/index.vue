@@ -6,15 +6,14 @@
     <div class="card-header text-white">
         <h5 class="mb-0">Thông Tin Chuyến Đi</h5>
     </div>
-    <div class="card-body">
-        <p><strong>Điểm đón:</strong> 123 Lê Duẩn, Đà Nẵng</p>
-        <p><strong>Điểm đến:</strong> 456 Nguyễn Văn Linh, Đà Nẵng</p>
+    <div class="card-body" v-for="(v, k) in nhanChuyenDi" :key="k">
+        <p><strong>Điểm đón:</strong> {{ v.DiaDiemDon }}</p>
+        <p><strong>Điểm đến:</strong>{{ v.DiaDiemDen }}</p>
         <p><strong>Khoảng cách đến khách hàng:</strong> 1.2 km</p>
         <p><strong>Thời gian tài xế đến:</strong> 5 phút</p>
         <p><strong>Giá cước ước tính:</strong> 45.000đ</p>
     </div>
     </div>
-
     <!-- BẢN ĐỒ REALTIME -->
     <div class="card mb-4">
     <div class="card-header text-white">
@@ -27,21 +26,41 @@
         </div>
     </div>
     </div>
-
     <!-- NÚT CẬP NHẬT TRẠNG THÁI -->
     <div class="text-center mb-5">
     <button class="btn-dadennoi me-2">Đã đến nơi</button>
     <button class="btn-batdau me-2">Bắt đầu</button>
     <button class="btn-ketthuc">Kết thúc</button>
     </div>
-
     </div>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
-    
-};
+    data() {
+    return {
+      nhanChuyenDi: {},
+    };
+  },
+  mounted() {
+    this.loadDataDatXe();
+  },
+
+methods: {
+    loadDataDatXe() {
+            axios
+                .get('http://127.0.0.1:8000/api/admin/khach-hang/dat-xe', {
+                    headers: {
+                        Authorization: 'Bearer ' + localStorage.getItem("token_admin")
+                    }
+                })
+                .then((res) => {
+                    this.nhanChuyenDi = res.data.data;
+                })
+    },
+}
+}; 
 </script>
 
 <style scoped>

@@ -47,12 +47,10 @@
         <div class="login-wrapper">
             <div class="login-card">
                 <div class="text-center mb-4">
-                <img src="https://scontent.fdad3-4.fna.fbcdn.net/v/t39.30808-6/491724271_2427655590935555_1536682867116486130_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ocS5eEz0llgQ7kNvwEGz5kQ&_nc_oc=Adkx30y2i6-ANYNRx0ugOeAAUZBRju_CBSlR04306M_DvC8n4JcnyG6s8fOjPoEbomtMXaonTBtaZ75W0_dlE1JG&_nc_zt=23&_nc_ht=scontent.fdad3-4.fna&_nc_gid=XNtm4NVUFN4OLqPeZFXYRg&oh=00_AfFmSkG_dGAmFlRmD_cy5GaZP0TbZ5FP39CarcJG3r_yTQ&oe=68063E8C" alt="Logo" class="login-logo">
+                <img src="../../../assets/img/LOGO_KLTN_CHINH.png" alt="Logo" class="login-logo">
                 </div>
-                <h3 class="text-center mb-2">Đăng Nhập</h3>
+                <h3 class="text-center mb-2 fs-3">Đăng Nhập</h3>
                 <p class="text-center mb-3">
-                Bạn chưa có tài khoản?
-                <router-link to="/client/dang-ky" class="link-register">Đăng ký ngay</router-link>
                 </p>
                 <form @submit.prevent="ActionDangnhap()">
                 <div class="mb-3">

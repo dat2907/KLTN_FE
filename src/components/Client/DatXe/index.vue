@@ -18,7 +18,7 @@
                                 đến</label>
                             <div class="dropdown">
                                 <input v-model="client_order.DiaDiemDen" type="text" class="form-control dropdown-toggle"
-                                placeholder="Nhập điểm đón" v-on:keyup.enter="timDiaChiDen()" data-bs-toggle="dropdown" aria-expanded="false">
+                                placeholder="Nhập điểm đến" v-on:keyup.enter="timDiaChiDen()" data-bs-toggle="dropdown" aria-expanded="false">
                                 <ul class="dropdown-menu">
                                     <template v-for="(value, index) in list_search" :key="index">
                                         <li><a v-on:click="taoToaDo(2, value.lat, value.lon, value.display_name)" class="dropdown-item" href="#">{{ value.display_name }}</a></li>
@@ -26,16 +26,24 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <!-- <div class="col-md-6">
                             <label class="form-label fw-semibold"><i class="fa-solid fa-calendar-days me-1"></i>Ngày &
                                 Giờ đặt trước</label>
                             <input v-model="client_order.ThoiGian" type="datetime-local" class="form-control">
-                        </div>
+                        </div> -->
                         <div class="col-md-6">
                             <label class="form-label fw-semibold"><i class="fa-solid fa-coins me-1"></i>Giá ước
                                 tính</label>
                             <input v-model="client_order.GiaTien" type="text" class="form-control"
                                 placeholder="Tự động tính" disabled>
+                            <div class="col-md-12">
+                                <label class="form-label fw-semibold mt-2"><i class="fa-solid fa-credit-card me-1"></i>Phương thức thanh toán</label>
+                                <select v-model="selected_payment" class="form-select ">
+                                    <option disabled value="">-- Chọn phương thức thanh toán --</option>
+                                    <option value="1">Thanh toán tiền mặt</option>
+                                    <option value="2">Quét mã QR chuyển khoản</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="col-md-12">
                             <label class="form-label fw-semibold"><i class="fa-solid fa-car me-1"></i>Loại xe</label>
@@ -78,6 +86,7 @@ export default {
             vi_tri_den  : null,
             vi_tri_don  : null,
             list_search : [], 
+            selected_payment: '', // 1: Thanh toán tiền mặt, 2: Quét mã QR
         }
     },
     mounted() {
@@ -222,6 +231,7 @@ export default {
                         this.$toast.error(thong_bao);
                     }
                 });
+                
         }
     },
 }

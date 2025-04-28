@@ -29,11 +29,9 @@
         <div class="ruttien-card mt-2">
             <label>Số tiền cần rút</label>
             <input type="number" class="ruttien-input" placeholder="Nhập số tiền">
-
             <button class="ruttien-button">Rút Tiền</button>
         </div>
     </div>
-
 </template>
 <script>
 export default {
