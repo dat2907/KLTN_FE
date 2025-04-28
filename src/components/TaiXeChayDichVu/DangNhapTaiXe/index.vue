@@ -59,7 +59,8 @@
                 <h3 class="text-center mb-2">Đăng Nhập</h3>
                 <p class="text-center mb-3">
                     Bạn chưa có tài khoản?
-                    <router-link to="/taixechaydichvu/dang-ki-tai-xe" class="link-register">Đăng ký ngay</router-link>
+                    <router-link to="/tai-xe-chay-dich-vu/dang-ki-tai-xe" class="link-register">Đăng ký
+                        ngay</router-link>
                 </p>
 
                 <div class="mb-3">
