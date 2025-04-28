@@ -186,7 +186,7 @@ export default {
                         var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
                         this.$toast.success(thong_bao);
                         this.driver_create = {};
-                        this.$router.push('/taixechaydichvu/dang-nhap-tai-xe');
+                        this.$router.push('/tai-xe-chay-dich-vu/dang-nhap-tai-xe');
                     } else {
                         var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
                         this.$toast.error(thong_bao);
@@ -205,70 +205,70 @@ export default {
 }
 </script>
 <style>
-    .auth-wrapper {
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: rgb(4, 125, 239);
-        padding: 30px;
-    }
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(4, 125, 239);
+    padding: 30px;
+}
 
-    .auth-card {
-        width: 100%;
-        max-width: 500px;
-        background: #fff;
-        padding: 40px;
-        border-radius: 20px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
+.auth-card {
+    width: 100%;
+    max-width: 500px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
 
-    .auth-logo {
-        width: 150px;
-        border-radius: 12px;
-    }
+.auth-logo {
+    width: 150px;
+    border-radius: 12px;
+}
 
-    .form-label {
-        font-weight: 600;
-        color: #333;
-    }
+.form-label {
+    font-weight: 600;
+    color: #333;
+}
 
-    .form-control {
-        padding: 12px;
-        border-radius: 10px;
-        border: 1px solid #ddd;
-        transition: 0.3s;
-    }
+.form-control {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
 
-    .form-control:focus {
-        border-color: rgb(4, 125, 239);
-        box-shadow: 0 0 0 0.2rem rgb(81, 131, 177);
-    }
+.form-control:focus {
+    border-color: rgb(4, 125, 239);
+    box-shadow: 0 0 0 0.2rem rgb(81, 131, 177);
+}
 
-    .btn-auth {
-        background-color: rgb(4, 125, 239);
-        color: #fff;
-        padding: 12px;
-        border: none;
-        border-radius: 30px;
-        font-weight: 600;
-        width: 100%;
-        transition: 0.3s ease;
-        box-shadow: 0 4px 12px rgba(239, 86, 4, 0.3);
-    }
+.btn-auth {
+    background-color: rgb(4, 125, 239);
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    width: 100%;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(239, 86, 4, 0.3);
+}
 
-    .btn-auth:hover {
-        background-color: rgb(4, 125, 239);
-        transform: translateY(-2px);
-    }
+.btn-auth:hover {
+    background-color: rgb(4, 125, 239);
+    transform: translateY(-2px);
+}
 
-    .auth-link {
-        color: rgb(4, 125, 239);
-        font-weight: 600;
-        text-decoration: none;
-    }
+.auth-link {
+    color: rgb(4, 125, 239);
+    font-weight: 600;
+    text-decoration: none;
+}
 
-    .auth-link:hover {
-        text-decoration: underline;
-    }
+.auth-link:hover {
+    text-decoration: underline;
+}
 </style>

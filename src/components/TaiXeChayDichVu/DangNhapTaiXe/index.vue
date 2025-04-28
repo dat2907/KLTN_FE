@@ -61,23 +61,23 @@
                     Bạn chưa có tài khoản?
                     <router-link to="/taixechaydichvu/dang-ki-tai-xe" class="link-register">Đăng ký ngay</router-link>
                 </p>
-                <form @submit.prevent="ActionDangnhap()">
-                    <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input v-model="driver.email" type="email" class="form-control" placeholder="Nhập vào Email">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Mật khẩu</label>
-                        <input v-model="driver.password" type="password" class="form-control"
-                            placeholder="Nhập vào Mật khẩu">
-                    </div>
-                    <div class="mb-3 text-end">
-                        <router-link to="/client/quen-mat-khau" class="link-forgot">Quên mật khẩu?</router-link>
-                    </div>
-                    <button type="submit" class="btn-login w-100">
-                        <i class="bx bx-user"></i> Đăng Nhập
-                    </button>
-                </form>
+
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input v-model="driver.email" type="email" class="form-control" placeholder="Nhập vào Email">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Mật khẩu</label>
+                    <input v-model="driver.password" type="password" class="form-control"
+                        placeholder="Nhập vào Mật khẩu">
+                </div>
+                <div class="mb-3 text-end">
+                    <router-link to="/client/quen-mat-khau" class="link-forgot">Quên mật khẩu?</router-link>
+                </div>
+                <button v-on:click="ActionDangnhap()" type="submit" class="btn-login w-100">
+                    <i class="bx bx-user"></i> Đăng Nhập
+                </button>
+
             </div>
         </div>
     </div>
