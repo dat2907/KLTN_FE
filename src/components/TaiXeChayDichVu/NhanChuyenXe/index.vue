@@ -1,51 +1,97 @@
 <template>
     <div class="container mt-4">
 
-    <!-- THÔNG TIN CHUYẾN ĐI -->
-    <div class="card mb-4">
-    <div class="card-header text-white">
-        <h5 class="mb-0">Thông Tin Chuyến Đi</h5>
-    </div>
-    <div class="card-body">
-        <p><strong>Điểm đón:</strong> 123 Lê Duẩn, Đà Nẵng</p>
-        <p><strong>Điểm đến:</strong> 456 Nguyễn Văn Linh, Đà Nẵng</p>
-        <p><strong>Khoảng cách đến khách hàng:</strong> 1.2 km</p>
-        <p><strong>Thời gian tài xế đến:</strong> 5 phút</p>
-        <p><strong>Giá cước ước tính:</strong> 45.000đ</p>
-    </div>
-    </div>
-
-    <!-- BẢN ĐỒ REALTIME -->
-    <div class="card mb-4">
-    <div class="card-header text-white">
-        <h5 class="mb-0">Bản Đồ Realtime</h5>
-    </div>
-    <div class="card-body p-0" style="height: 300px;">
-        <!-- Giả lập Google Maps -->
-        <div id="map" style="width: 100%; height: 100%; background: #ddd; display: flex; align-items: center; justify-content: center;">
-        <span class="text-muted">[ Google Maps hiển thị ở đây ]</span>
+        <!-- THÔNG TIN CHUYẾN ĐI -->
+        <div class="card shadow-lg rounded-4 mb-4">
+            <div class="card-header bg-primary text-white rounded-top-4">
+                <h5 class="mb-0 text-center">Thông Tin Chuyến Đi</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <p class="fw-bold mb-1">Điểm đón:</p>
+                        <p class="mb-0">123 Lê Duẩn, Đà Nẵng</p>
+                    </li>
+                    <li class="list-group-item">
+                        <p class="fw-bold mb-1">Điểm đến:</p>
+                        <p class="mb-0">456 Nguyễn Văn Linh, Đà Nẵng</p>
+                    </li>
+                    <li class="list-group-item">
+                        <p class="fw-bold mb-1">Khoảng cách đến khách hàng:</p>
+                        <p class="mb-0">1.2 km</p>
+                    </li>
+                    <li class="list-group-item">
+                        <p class="fw-bold mb-1">Thời gian tài xế đến:</p>
+                        <p class="mb-0">5 phút</p>
+                    </li>
+                    <li class="list-group-item">
+                        <p class="fw-bold mb-1">Giá cước ước tính:</p>
+                        <p class="mb-0">45.000đ</p>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-    </div>
 
-    <!-- NÚT CẬP NHẬT TRẠNG THÁI -->
-    <div class="text-center mb-5">
-    <button class="btn-dadennoi me-2">Đã đến nơi</button>
-    <button class="btn-batdau me-2">Bắt đầu</button>
-    <button class="btn-ketthuc">Kết thúc</button>
-    </div>
+
+
+        <!-- BẢN ĐỒ REALTIME -->
+        <div class="card mb-4">
+            <div class="card-header text-white">
+                <h5 class="mb-0">Bản Đồ Realtime</h5>
+            </div>
+            <div class="card-body p-0" style="height: 300px;">
+                <!-- Giả lập Google Maps -->
+                <div id="map"
+                    style="width: 100%; height: 100%; background: #ddd; display: flex; align-items: center; justify-content: center;">
+                    <span class="text-muted">[ Google Maps hiển thị ở đây ]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- NÚT CẬP NHẬT TRẠNG THÁI -->
+        <div class="text-center mb-5">
+            <button class="btn-dadennoi me-2">Nhận chuyến xe</button>
+            <button class="btn-batdau me-2">Từ chối</button>
+        </div>
 
     </div>
 </template>
-
 <script>
+import axios from 'axios';
 export default {
-    
+    data() {
+        return {
+
+        }
+    },
+    mounted() {
+
+    },
+    methods: {
+        nhanChuyenXe() {
+            axios
+                .post("http://127.0.0.1:8000/api/tai-xe/nhan-chuyen-xe", {
+                    headers: {
+                        Authorization: 'Bearer ' + localStorage.getItem("token_tai_xe")
+                    }
+                })
+                .then((res) => {
+                    if (res.data.status) {
+                        var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
+                        this.$toast.success(thong_bao);
+                        this.dsChuyenXe = res.data.data;
+                    } else {
+                        var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
+                        this.$toast.error(thong_bao);
+                    }
+                });
+        },
+    },
 };
 </script>
 
 <style scoped>
-    .container {
+.container {
     max-width: 800px;
     margin: 0 auto;
 }
@@ -120,6 +166,7 @@ export default {
     background-color: #d4edda;
     color: #155724;
 }
+
 .text-center .btn-dadennoi:hover {
     background-color: #ffc107;
     color: white;
@@ -134,6 +181,4 @@ export default {
     background-color: #198754;
     color: white;
 }
-
 </style>
-

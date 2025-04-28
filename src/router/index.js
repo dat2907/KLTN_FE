@@ -193,7 +193,7 @@ const routes = [
   {
     path: "/tai-xe-chay-dich-vu/lich-su-chuyen-xe",
     component: () =>
-      import("../components/TaiXeChayDichVu/NhanChuyenXe/index.vue"),
+      import("../components/TaiXeChayDichVu/LichSuChuyenXe/index.vue"),
     meta: { layout: "taixe" },
   },
 ];
