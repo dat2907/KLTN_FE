@@ -125,13 +125,12 @@
                 </div>
                 <div class="mb-33">
                     <label class="form-label">CCCD</label>
-                    <input v-model="driver_create.cccd" type="text" class="form-control"
-                        placeholder="Nhập vào số điện thoại">
+                    <input v-model="driver_create.cccd" type="text" class="form-control" placeholder="Nhập vào cccd">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Bằng lái xe</label>
                     <input v-model="driver_create.bang_lai_xe" type="text" class="form-control"
-                        placeholder="Nhập vào số điện thoại">
+                        placeholder="Nhập bằng lái xe">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Tài khoản ngân hàng</label>

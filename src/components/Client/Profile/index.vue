@@ -21,9 +21,7 @@
                             <div class="col-lg-4">
                                 <div class="card h-100">
                                     <div class="card-body d-flex flex-column align-items-center text-center">
-                                        <img src="../../../assets/img/avatar1.jpeg"
-                                            class="rounded-circle p-1 mb-3" alt="Avatar"
-                                            style="width: 140px; height: 140px;" />
+                                        <img v-bind:src="profile.hinh_anh" style="width: 140px; height: 140px;" />
                                         <h5 class="mb-1">{{ profile.ho_ten }}</h5>
                                         <p class="text-muted mb-0">Khách Hàng</p>
                                         <p class="text-secondary small">{{ profile.dia_chi }}</p>
@@ -58,6 +56,30 @@
                                                 class="btn text-white">Cập Nhật</button>
                                         </div>
 
+                                    </div>
+                                    <hr class="mt-3">
+                                    <div class="row mb-3">
+                                        <div class="col-lg-3">
+                                            <h5 class="mb-3">Avatar</h5>
+                                        </div>
+                                        <div class="col-lg-9 text-secondary">
+                                            <input type="file" class="form-control" accept="image/*"
+                                                v-on:change="loadAnhTuLocal($event)">
+                                        </div>
+                                        <div class="col-lg-3">
+
+                                        </div>
+                                        <div class="col-lg-9 text-secondary mt-3">
+                                            <img v-if="anh_tmp" style="width: 150px; height: 150px" v-bind:src="anh_tmp"
+                                                alt="" class="img-fluid">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3"></div>
+                                        <div class="col-lg-9 text-secondary">
+                                            <button v-on:click="updateAvatar()" type="button"
+                                                class="btn btn-primary px-4">Lưu Ảnh</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -98,6 +120,7 @@
                                 </div>
                                 <button v-on:click="changePass()" class="btn text-white">Lưu</button>
                             </div>
+
                         </div>
                     </div>
 
@@ -112,7 +135,9 @@ export default {
     data() {
         return {
             profile: {},
-            changepassword: {}
+            changepassword: {},
+            anh_tmp: "",
+            file_anh: ""
 
         }
     },
@@ -120,6 +145,40 @@ export default {
         this.getDataProfile();
     },
     methods: {
+        loadAnhTuLocal(event) {
+            this.file_anh = event.target.files[0];
+            this.createImage(this.file_anh);
+        },
+        createImage(file) {
+            let reader = new FileReader();
+            let vm = this;
+            reader.onload = (e) => {
+                vm.anh_tmp = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        },
+        updateAvatar() {
+            const payload = new FormData();
+            payload.append('hinh_anh', this.file_anh);
+            axios
+                .post("http://127.0.0.1:8000/api/khach-hang/profile/anh-dai-dien", payload, {
+                    headers: {
+                        Authorization: 'Bearer ' + localStorage.getItem("token_khach_hang"),
+                        'Content-Type': 'multipart/from-data'
+                    }
+                })
+                .then((res) => {
+                    if (res.data.status) {
+                        var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
+                        this.$toast.success(thong_bao);
+                        this.getDataProfile()
+                    } else {
+                        var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
+                        this.$toast.error(thong_bao);
+                    }
+                })
+        },
+
         getDataProfile() {
             axios
                 .get("http://127.0.0.1:8000/api/khach-hang/profile/data", {
@@ -265,7 +324,7 @@ export default {
     padding: 10px 20px;
     font-weight: 600;
     border-radius: 8px;
-    
+
 }
 
 .btn:hover {
@@ -283,7 +342,8 @@ export default {
         flex-direction: column;
     }
 
-    .col-lg-4, .col-lg-8 {
+    .col-lg-4,
+    .col-lg-8 {
         width: 100%;
         margin-bottom: 20px;
     }
