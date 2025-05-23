@@ -6,7 +6,7 @@
                     <!-- profile box -->
                     <div class="profileBox pt-2 pb-2">
                         <div class="image-wrapper">
-                            <img src="../../assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged w36" />
+                            <img src="../../../assets/img/ava.jpg" alt="image" class="imaged w36" />
                         </div>
                         <div class="in">
                             <strong>Tên tài khoản</strong>
@@ -66,7 +66,7 @@
                     <!-- menu -->
                     <div class="listview-title mt-1">Danh Mục</div>
                     <ul class="listview flush transparent no-line image-listview">
-                        <li>
+                        <!-- <li>
                             <a href="/tai-xe-chay-dich-vu/lich-su-chuyen-xe" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-chart-pie"></i>
@@ -76,23 +76,23 @@
                                     <span class="badge">10</span>
                                 </div>
                             </a>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <a href="/tai-xe-chay-dich-vu/nhan-chuyen-xe" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-file-alt"></i>
                                 </div>
                                 <div class="in">Nhận chuyến xe</div>
                             </a>
-                        </li>
-                        <li>
+                        </li> -->
+                        <!-- <li>
                             <a href="/tai-xe-chay-dich-vu/profile-tai-xe" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-th-large"></i>
                                 </div>
                                 <div class="in">Profile</div>
                             </a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="/tai-xe-chay-dich-vu/vi-tien-tai-xe" class="item">
                                 <div class="icon-boxx">
@@ -124,7 +124,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="app-login.html" class="item">
+                            <a href="#" class="item" @click.prevent="logout">
                                 <div class="icon-boxx">
                                     <i class="fas fa-sign-out-alt"></i>
                                 </div>
@@ -138,7 +138,30 @@
     </div>
 </template>
 <script>
-export default {};
+export default {
+    methods:{
+        logout() {
+            // Xóa token và thông tin người dùng
+            localStorage.removeItem('token_tai_xe');
+            // localStorage.removeItem('ten_kh');
+
+            // Cập nhật trạng thái đăng nhập
+            this.isLoggedIn = false;
+            this.userName = '';
+
+            // Đóng sidebar
+            document.getElementById('sidebarPanel').classList.remove('show');
+
+            // Chuyển hướng về đăng nhập tài xế
+            this.$router.push('/tai-xe-chay-dich-vu/dang-nhap-tai-xe');
+
+            // Hiển thị thông báo
+            if (this.$toast) {
+                this.$toast.success('<b>Thông báo</b><span style="margin-top: 5px">Đăng xuất thành công</span>');
+            }
+        }
+    }
+};
 </script>
 <style scoped>
 #sidebarPanel .modal-content {

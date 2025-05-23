@@ -115,7 +115,7 @@
                             <input v-model="edit_khach_hang.email" type="email" class="form-control">
                         </div>
                         <div class="col-md-12 mb-2">
-                            <label class="form-label">Số Điện Thoại</label>
+                            <label class="form-label">Ví tiền</label>
                             <input v-model="edit_khach_hang.vi_tien" type="text" class="form-control">
                         </div>
 

@@ -59,12 +59,24 @@
                                                 placeholder="Nhập địa chỉ" />
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label">CCCD</label>
+                                            <label class="form-label">Căn Cước Công Dân</label>
                                             <input type="text" class="form-control" v-model="profile.cccd"
                                                 placeholder="Nhập cccd" />
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Loại xe</label>
+                                            <div class="form-group">
+                                                <label class="form-label"><i class="icon fa-solid fa-car me-2"></i>Loại
+                                                    xe</label>
+                                                <!-- <select  class="form-select" v-model="profile.loai_xe">
+                                                    <option disabled selected value="">-- Chọn loại xe --</option>
+                                                    <option v-bind:value="1">Xe máy</option>
+                                                    <option v-bind:value="2">Xe 4 chỗ</option>
+                                                    <option v-bind:value="3">Xe 7 chỗ</option>
+                                                    <option v-bind:value="4">Xe 4 chỗ LUXURY</option>
+                                                    <option v-bind:value="5">Xe 7 chỗ LUXURY</option>
+                                                </select> -->
+                                            </div>
                                             <input type="text" class="form-control" v-model="profile.loai_xe"
                                                 placeholder="Nhập loại xe" />
                                         </div>
@@ -341,7 +353,8 @@ export default {
     .btn-primary {
         font-size: 0.875rem;
     }
-    .btn{
+
+    .btn {
         font-size: 0.9rem !important;
     }
 }

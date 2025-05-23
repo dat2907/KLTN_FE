@@ -16,10 +16,11 @@ const routes = [
         path: "/homepage/trung-tam-ho-tro",
         component: () => import("../components/HomePage/TrungTamHoTro/index.vue"),
     },
-    {
-        path: "/homepage/trung-tam-tai-xe",
-        component: () => import("../components/HomePage/TrungTamTaiXe/index.vue"),
-    },
+    // {
+    //     path: "/homepage/trung-tam-tai-xe",
+    //     component: () => import("../components/HomePage/TrungTamTaiXe/index.vue"),
+    //     // meta: { layout: "taixe" },
+    // },
 
     //Admin
     {
@@ -177,9 +178,20 @@ const routes = [
     },
     //taixe
     {
+        path: "/homepage/trung-tam-tai-xe",
+        component: () => import("../components/HomePage/TrungTamTaiXe/index.vue"),
+        meta: { layout: "taixe" },
+    },
+    {
         path: "/tai-xe-chay-dich-vu/profile-tai-xe",
         component: () =>
             import("../components/TaiXeChayDichVu/ProfileTaiXe/index.vue"),
+        meta: { layout: "taixe" },
+    },
+    {
+        path: "/tai-xe-chay-dich-vu/thong-bao",
+        component: () =>
+            import("../components/TaiXeChayDichVu/ThongBao/index.vue"),
         meta: { layout: "taixe" },
     },
     {
