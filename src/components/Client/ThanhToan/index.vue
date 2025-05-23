@@ -3,7 +3,7 @@
         <div class="row">
             <div class="card mb-3">
                 <div class="card-body p-1 pt-3">
-                    <div class="table-responsive">
+                    <!-- <div class="table-responsive">
                         <table class="table table-bordered ">
                             <thead class="table-light">
                                 <tr>
@@ -46,10 +46,58 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </div> -->
+
+                    <div class="row b-3">
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header text">
+                                    <h3 class="m-0">Thông tin tài xế</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row d-flex justify-content-between">
+                                        <div class="col-4">
+                                            <img style="width: 150px; height: 150px;" class="ava-img" />
+                                            <!-- <img v-bind:src="profile.hinh_anh" style="width: 140px; height: 140px;" class="ava-img mb-2" /> -->
+
+                                        </div>
+                                        <div class="col-7 align-content-around flex-wrap">
+                                            <div class="pb-2 d-flex align-items-center justify-content-between">
+                                                <h4 class="m-0">Tên Tài Xế</h4>
+                                                <p class="m-0">tên</p>
+                                            </div>
+                                            <div class="pb-2 d-flex align-items-center justify-content-between">
+                                                <h4 class="m-0">Loại Xe</h4>
+                                                <p class="m-0">Loại Xe</p>
+                                            </div>
+                                            <div class="pb-2 d-flex align-items-center justify-content-between">
+                                                <h4 class="m-0">Biển Số</h4>
+                                                <p class="m-0">Biển Số</p>
+                                            </div>
+                                            <div class="pb-2 d-flex align-items-center justify-content-between">
+                                                <h4 class="m-0">Thời Gian Đặt</h4>
+                                                <p class="m-0">Thời Gian Đặt</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 mt-2">
+                                            <div class="pb-2 d-flex align-items-center justify-content-between">
+                                                <h4 class="m-0">Địa Chỉ Đón</h4>
+                                                <p class="m-0">Địa Chỉ ĐónĐịa Chỉ Đón</p>
+                                            </div>
+                                            <div class="pb-2 d-flex align-items-center justify-content-between">
+                                                <h4 class="m-0">Địa Chỉ Đến</h4>
+                                                <p class="m-0">Địa Chỉ Đến</p>
+                                            </div>
+                                            <div class="pb-2 d-flex align-items-center justify-content-between">
+                                                <h4 class="m-0">Thành Tiền</h4>
+                                                <h4 class="m-0">Thành Tiền</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-
-                    <hr>
                     <div class="row mt-3">
                         <div class="col-lg-6 mb-3">
                             <div class="card">
@@ -59,8 +107,10 @@
                                         <label class="me-2"><i
                                                 class="fa-xl fa-solid fa-ticket text-danger me-1"></i><b>Voucher:</b></label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Nhập mã giảm giá" style="height: 38px;">
-                                            <button class="btn" type="button" id="button-addon2" style="height: 38px;">Áp Dụng</button>
+                                            <input type="text" class="form-control" placeholder="Nhập mã giảm giá"
+                                                style="height: 38px;">
+                                            <button class="btn" type="button" id="button-addon2"
+                                                style="height: 38px;">Áp Dụng</button>
                                         </div>
                                     </div>
                                 </div>
@@ -84,17 +134,29 @@
                     </div>
                     <hr>
                     <div class="row mt-4">
-                        <div class="col-6">
+                        <div class="col-12">
                             <div class="ms-auto">
                                 <h5 class="card-title">Chi tiết thanh toán</h5>
-                                <p><i class="fa-solid fa-money-bill fa-xl me-2"></i><b>Tổng Tiền Hóa Đơn:</b> </p>
-                                <p><i class="fa-solid fa-money-bill-trend-up fa-xl me-2"></i><b>Số Tiền Giảm:</b>
-                                </p>
-                                <p><i class="fa-solid fa-money-bill-transfer me-2"></i><b>Tổng tiền thanh toán:</b> </p>
+                                <div class="pb-2 d-flex align-items-center justify-content-between">
+                                    <p><i class="fa-solid fa-money-bill fa-xl me-2"></i><b>Tổng Tiền Hóa Đơn:</b> </p>
+                                    <p class="m-0 ">Thành Tiền</p>
+                                </div>
+                                <div class="pb-2 d-flex align-items-center justify-content-between">
+                                    <p><i class="fa-solid fa-money-bill-trend-up fa-xl me-2"></i><b>Số Tiền Giảm:</b>
+                                    </p>
+                                    <p class="m-0 ">Thành Tiền</p>
+                                </div>
+                                <div class="pb-2 d-flex align-items-center justify-content-between">
+                                    <p><i class="fa-solid fa-money-bill-transfer me-2"></i><b>Tổng tiền thanh toán:</b>
+                                    </p>
+                                    <p class="m-0 ">Thành Tiền</p>
+                                </div>
+
                             </div>
                         </div>
                         <hr>
                         <div class="col-12 d-flex justify-content-center mb-2">
+
                             <button class="btn btn-primary btn-lg w-50 text-nowrap">
                                 <i class="bi bi-check-circle"></i> Xác nhận & Thanh toán
                             </button>
@@ -109,19 +171,48 @@
 </template>
 <script>
 export default {
+    data() {
+        return {
+            isThanhToan: false,
+        }
+    },
+    mounted() {
+        this.checkThanhToanStatus();
+    },
+    methods: {
+        checkThanhToanStatus() {
+            const token = localStorage.getItem('token_khach_hang');
+            if (token) {
+                this.isThanhToan = true;
+                var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
+                this.$toast.success(thong_bao);
+                this.$router.push('/client/theo-doi-chuyen-di');
 
+            } else {
+                this.isThanhToan = false;
+                var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
+                    this.$toast.error(thong_bao);
+            }
+        },
+    }
 }
 </script>
 <style>
-.btn{
+p {
+    margin: 0;
+}
+
+.btn {
     background-color: #007bff;
     color: #f8f9fa;
     font-weight: bold;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: #0570e2 !important;
     color: #f8f9fa !important;
 }
+
 .form-select {
     border: 1px solid #dee2e6;
     border-radius: 0.375rem;

@@ -96,7 +96,13 @@ const routes = [
         meta: { layout: "new" },
 
     },
+    {
+        path: "/client/thong-bao",
+        component: () => import("../components/Client/ThongBao/index.vue"),
+        meta: { layout: "client" },
+        beforeEnter: KiemTraKhachHang,
 
+    },
     {
         path: "/client/dang-nhap",
         component: () => import("../components/Client/DangNhap/index.vue"),
@@ -154,7 +160,7 @@ const routes = [
         beforeEnter: KiemTraKhachHang
     },
     {
-        path: "/Client/lich-su-chuyen-xe",
+        path: "/client/lich-su-chuyen-xe",
         component: () => import("../components/Client/LichSuChuyenXe/index.vue"),
         meta: { layout: "client" },
         beforeEnter: KiemTraKhachHang,
