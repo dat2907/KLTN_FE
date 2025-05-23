@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="p-3">
         <div class="row mt-3">
             <div class="col-lg-12">
                 <div class="card">
@@ -86,23 +86,15 @@
                             </div>
                             <div class="col-lg-6 mb-2">
                                 <label>Quyền</label>
-                                <select v-model="create_nhan_vien.id_quyen" class="form-control mt-2">
-                                    <template v-for="(v, k) in listPhanQuyen" :key="k">
+                                <select v-model="create_nhan_vien.id_chuc_vu" class="form-control mt-2">
+                                    <template v-for="(v, k) in list_quyen" :key="k">
                                         <option v-bind:value="v.id">{{ v.ten_quyen }}</option>
                                     </template>
                                 </select>
                             </div>
-                            <div class="col-lg-6 mb-2">
-                                <label>Tình trạng</label>
-                                <select v-model="create_nhan_vien.tinh_trang" class="form-control mt-2">
-                                    <option value="1">Hoạt Động</option>
-                                    <option value="0">Dừng Hoạt Động</option>
-                                </select>
-                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button v-if="is_them_moi == 0" class="btn btn-secondary" disabled>Thêm Mới</button>
-                            <button v-else v-on:click="themMoiDaiLy()" class="btn btn-primary">Thêm Mới</button>
+                            <button v-on:click="themMoiDaiLy()" class="btn btn-primary">Thêm Mới</button>
                         </div>
                     </div>
                 </div>
@@ -157,8 +149,8 @@
                             </div>
                             <div class="mb-2">
                                 <label>Quyền</label>
-                                <select v-model="edit_nhan_vien.id_quyen" class="form-control mt-2">
-                                    <template v-for="(v, k) in listPhanQuyen" :key="k">
+                                <select v-model="edit_nhan_vien.id_chuc_vu" class="form-control mt-2">
+                                    <template v-for="(v, k) in list_quyen" :key="k">
                                         <option v-bind:value="v.id">{{ v.ten_quyen }}</option>
                                     </template>
                                 </select>
@@ -195,7 +187,8 @@ export default {
             del_nhan_vien: {},
             is_them_moi: 0,
             edit_nhan_vien: {},
-            listPhanQuyen: []
+            listPhanQuyen: [],
+            list_quyen: []
         }
     },
     mounted() {
@@ -245,6 +238,7 @@ export default {
                 })
                 .then((res) => {
                     this.list_nhan_vien = res.data.data;
+                    this.list_quyen = res.data.data_quyen;
                 })
         },
         themMoiDaiLy() {
@@ -259,12 +253,17 @@ export default {
                         var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
                         this.$toast.success(thong_bao);
                         this.create_nhan_vien = {},
-                            this.layDataNhanVien();
+                        this.layDataNhanVien();
                     } else {
                         var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
                         this.$toast.error(thong_bao);
                     }
                 })
+                .catch((res) => {
+                    var errors = Object.values(res.response.data.errors);
+                    var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + errors[0] + '<span>';
+                    this.$toast.error(thong_bao);
+                });
         },
         capnhatNhanVien() {
             axios
@@ -283,6 +282,11 @@ export default {
                         this.$toast.error(thong_bao);
                     }
                 })
+                .catch((res) => {
+                    var errors = Object.values(res.response.data.errors);
+                    var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + errors[0] + '<span>';
+                    this.$toast.error(thong_bao);
+                });
         },
         xoaNhanVien() {
             axios

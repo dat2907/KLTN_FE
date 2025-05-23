@@ -26,6 +26,7 @@ const routes = [
         path: "/admin/khach-hang",
         component: () => import("../components/Admin/KhachHang/index.vue"),
         meta: { layout: "admin" },
+        beforeEnter: KiemTraAdmin,
     },
     {
         path: "/admin/dang-nhap",
@@ -36,33 +37,45 @@ const routes = [
         path: "/admin/ds-dat-xe",
         component: () => import("../components/Admin/QLDatXe/index.vue"),
         meta: { layout: "admin" },
+        beforeEnter: KiemTraAdmin,
+
     },
 
     {
         path: "/admin/tai-xe",
         component: () => import("../components/Admin/TaiXe/index.vue"),
         meta: { layout: "admin" },
+        beforeEnter: KiemTraAdmin,
+
     },
 
     {
         path: "/admin/ma-giam-gia",
         component: () => import("../components/Admin/MaGiamGia/index.vue"),
         meta: { layout: "admin" },
+        beforeEnter: KiemTraAdmin,
+
     },
     {
         path: "/admin/phan-quyen",
         component: () => import("../components/Admin/PhanQuyen/index.vue"),
         meta: { layout: "admin" },
+        beforeEnter: KiemTraAdmin,
+
     },
     {
         path: "/admin/thong-ke",
         component: () => import("../components/Admin/ThongKe/index.vue"),
         meta: { layout: "admin" },
+        beforeEnter: KiemTraAdmin,
+
     },
     {
         path: "/admin/nhan-vien",
         component: () => import("../components/Admin/NhanVien/index.vue"),
         meta: { layout: "admin" },
+        beforeEnter: KiemTraAdmin,
+
     },
     {
         path: "/admin/lich-su-nap-rut",
