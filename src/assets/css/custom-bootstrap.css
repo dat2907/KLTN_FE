@@ -1,0 +1,23 @@
+:root {
+    --bs-light: #f8f9fa;
+    --bs-light-rgb: 248, 249, 250;
+    --bs-light-text-emphasis: #212529;
+    --bs-light-bg-subtle: #f8f9fa;
+    --bs-light-border-subtle: #f8f9fa;
+}
+
+.btn-light {
+    --bs-btn-color: #212529;
+    --bs-btn-bg: var(--bs-light);
+    --bs-btn-border-color: var(--bs-light);
+    --bs-btn-hover-color: #212529;
+    --bs-btn-hover-bg: #d3d4d5;
+    --bs-btn-hover-border-color: #c6c7c8;
+    --bs-btn-focus-shadow-rgb: 211, 212, 213;
+    --bs-btn-active-color: #212529;
+    --bs-btn-active-bg: #c6c7c8;
+    --bs-btn-active-border-color: #babbbc;
+    --bs-btn-disabled-color: #212529;
+    --bs-btn-disabled-bg: var(--bs-light);
+    --bs-btn-disabled-border-color: var(--bs-light);
+} 
