@@ -129,11 +129,11 @@ export default {
                 .then((res) => {
                     if (res.data.status) {
                         var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
-                        this.$toast.success(thong_bao);
+                        // this.$toast.success(thong_bao);
                         this.dsChuyenXe = res.data.data;
                     } else {
                         var thong_bao = '<b>Thông báo</b><span style="margin-top: 5px">' + res.data.message + '<span>';
-                        this.$toast.error(thong_bao);
+                        // this.$toast.error(thong_bao);
                     }
                 });
         },

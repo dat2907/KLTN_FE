@@ -6,7 +6,9 @@
                     <!-- profile box -->
                     <div class="profileBox pt-2 pb-2" v-if="isLoggedIn">
                         <div class="image-wrapper">
-                            <img src="../../assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged w36" />
+                            <!-- <img src="../../assets/img/sample/avatar/avatar1.jpg" alt="image" class="imaged w36" /> -->
+                            <img src="../../../assets/img/ava.jpg" alt="image" class="imaged w36">
+
                         </div>
                         <div class="in">
                             <strong>{{ userName }}</strong>
@@ -45,14 +47,14 @@
                                     </div>
                                 </a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="/client/profile" class="item">
                                     <div class="icon-boxx">
                                         <i class="fas fa-user"></i>
                                     </div>
                                     <div class="in">Thông tin cá nhân</div>
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="/client/lich-su-chuyen-xe" class="item">
                                     <div class="icon-boxx">
@@ -61,7 +63,7 @@
                                     <div class="in">Lịch sử chuyến xe</div>
                                 </a>
                             </li>
-                            <li>
+                            <li v-if="isThanhToan">
                                 <a href="/client/theo-doi-chuyen-di" class="item">
                                     <div class="icon-boxx">
                                         <i class="fas fa-map-marked-alt"></i>
@@ -162,13 +164,23 @@ export default {
     data() {
         return {
             isLoggedIn: false,
+            isThanhToan: false,
             userName: ''
         }
     },
     mounted() {
         this.checkLoginStatus();
+        this.checkThanhToanStatus();
     },
     methods: {
+        checkThanhToanStatus() {
+            const thanhToan = localStorage.getItem('da_thanh_toan');
+            if (thanhToan === 'true') {
+                this.isThanhToan = true;
+            } else {
+                this.isThanhToan = false;
+            }
+        },
         checkLoginStatus() {
             const token = localStorage.getItem('token_khach_hang');
             if (token) {
@@ -183,17 +195,17 @@ export default {
             // Xóa token và thông tin người dùng
             localStorage.removeItem('token_khach_hang');
             localStorage.removeItem('ten_kh');
-            
+
             // Cập nhật trạng thái đăng nhập
             this.isLoggedIn = false;
             this.userName = '';
-            
+
             // Đóng sidebar
             document.getElementById('sidebarPanel').classList.remove('show');
-            
+
             // Chuyển hướng về trang chủ
             this.$router.push('/');
-            
+
             // Hiển thị thông báo
             if (this.$toast) {
                 this.$toast.success('<b>Thông báo</b><span style="margin-top: 5px">Đăng xuất thành công</span>');
