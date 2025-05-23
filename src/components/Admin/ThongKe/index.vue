@@ -1,5 +1,5 @@
 <template>
-    <div class="container py-4">
+    <div class=" p-4">
         <!-- Summary Cards -->
         <div class="row mb-4">
             <div class="col-md-3">
@@ -143,20 +143,39 @@
 
 <script>
 import axios from 'axios';
-import Chart from 'chart.js';
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
 
 export default {
     data() {
         return {
             statistics: {
-                tong_doanh_thu: 0,
-                so_don_hang: 0,
-                khach_hang_moi: 0,
-                tai_xe_moi: 0,
-                tu_ngay: '',
-                den_ngay: '',
-                top_khach_hang: [],
-                top_tai_xe: []
+                tong_doanh_thu: 15000000,
+                so_don_hang: 150,
+                khach_hang_moi: 25,
+                tai_xe_moi: 10,
+                tu_ngay: '2024-01-01',
+                den_ngay: '2024-03-20',
+                doanh_thu_theo_thang: [
+                    { thang: 'T1/2024', doanh_thu: 5000000 },
+                    { thang: 'T2/2024', doanh_thu: 7000000 },
+                    { thang: 'T3/2024', doanh_thu: 3000000 },
+                ],
+                don_hang_thanh_cong: 120,
+                don_hang_dang_xu_ly: 20,
+                don_hang_that_bai: 10,
+                top_khach_hang: [
+                    { id: 1, ho_ten: 'Nguyễn Văn A', so_don_hang: 15, tong_chi_tieu: 2500000 },
+                    { id: 2, ho_ten: 'Trần Thị B', so_don_hang: 12, tong_chi_tieu: 2000000 },
+                    { id: 3, ho_ten: 'Lê Văn C', so_don_hang: 10, tong_chi_tieu: 1800000 },
+                    { id: 4, ho_ten: 'Phạm Thị D', so_don_hang: 8, tong_chi_tieu: 1500000 },
+                ],
+                top_tai_xe: [
+                    { id: 1, ho_ten: 'Trần Văn X', so_chuyen_xe: 45, danh_gia: 4.8 },
+                    { id: 2, ho_ten: 'Nguyễn Văn Y', so_chuyen_xe: 38, danh_gia: 4.7 },
+                    { id: 3, ho_ten: 'Lê Văn Z', so_chuyen_xe: 35, danh_gia: 4.6 },
+                    { id: 4, ho_ten: 'Phạm Văn W', so_chuyen_xe: 30, danh_gia: 4.5 },
+                ]
             },
             filter: {
                 tu_ngay: '',
@@ -175,11 +194,12 @@ export default {
         this.filter.tu_ngay = firstDay.toISOString().split('T')[0];
         this.filter.den_ngay = lastDay.toISOString().split('T')[0];
         
-        this.getData();
+        this.initCharts(); // Khởi tạo chart ngay lập tức với dữ liệu mẫu
     },
     methods: {
         getData() {
-            axios.get("http://127.0.0.1:8000/api/admin/thong-ke/data", {
+            // Tạm thời comment phần gọi API
+            /*axios.get("http://127.0.0.1:8000/api/admin/thong-ke/data", {
                 params: this.filter,
                 headers: {
                     Authorization: 'Bearer ' + localStorage.getItem("token_admin")
@@ -190,7 +210,10 @@ export default {
                     this.statistics = res.data.data;
                     this.initCharts();
                 }
-            })
+            })*/
+            
+            // Chỉ cần gọi initCharts vì đã có dữ liệu mẫu
+            this.initCharts();
         },
         initCharts() {
             // Revenue Chart

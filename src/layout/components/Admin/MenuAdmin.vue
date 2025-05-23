@@ -67,7 +67,7 @@
                     <div class="listview-title mt-1">Danh Mục</div>
                     <ul class="listview flush transparent no-line image-listview">
                         <li>
-                            <a href="/admin/lich-su-nap-rut" class="item">
+                            <router-link to="/admin/lich-su-nap-rut" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-chart-pie"></i>
                                 </div>
@@ -75,39 +75,39 @@
                                     Lịch sử nạp rút
                                     <span class="badge">10</span>
                                 </div>
-                            </a>
+                            </router-link>
                         </li>
                         <li>
-                            <a href="/admin/nhan-vien" class="item">
+                            <router-link to="/admin/nhan-vien" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-file-alt"></i>
                                 </div>
                                 <div class="in">Nhân Viên</div>
-                            </a>
+                            </router-link>
                         </li>
                         <li>
-                            <a href="/admin/phan-quyen" class="item">
+                            <router-link to="/admin/phan-quyen" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-th-large"></i>
                                 </div>
                                 <div class="in">Phân Quyền</div>
-                            </a>
+                            </router-link>
                         </li>
                         <li>
-                            <a href="/admin/thong-ke" class="item">
+                            <router-link to="/admin/thong-ke" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-credit-card"></i>
                                 </div>
                                 <div class="in">Thống Kê</div>
-                            </a>
+                            </router-link>
                         </li>
                         <li>
-                            <a href="/admin/tai-xe" class="item">
+                            <router-link to="/admin/tai-xe" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-credit-card"></i>
                                 </div>
                                 <div class="in">Tài Xế</div>
-                            </a>
+                            </router-link>
                         </li>
                     </ul>
                     <!-- * menu -->
@@ -132,7 +132,7 @@
                             </a>
                         </li> -->
                         <li>
-                            <a href="app-login.html" class="item">
+                            <a @click="logout" class="item">
                                 <div class="icon-boxx">
                                     <i class="fas fa-sign-out-alt"></i>
                                 </div>
@@ -146,7 +146,14 @@
     </div>
 </template>
 <script>
-export default {};
+export default {
+    methods: {
+        logout() {
+            localStorage.removeItem('token_admin');
+            this.$router.push('/admin/dang-nhap');
+        }
+    }
+};
 </script>
 <style scoped>
 #sidebarPanel .modal-content {

@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="p-3">
         <div class="row mt-3">
             <div class="col-lg-4">
                 <div class="card">
@@ -151,29 +151,71 @@
                 </div>
             </div>
 
-            <div class="col-lg-4">
+            <div class="col-lg-8">
                 <div class="card">
-                    <div class="card-header">
-                        Danh Sách Chức Năng
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="mb-0">Danh Sách Chức Năng</h5>
+                            <p v-if="quyen_dang_chon.ten_quyen" class="mb-0 text-primary">
+                                Đang phân quyền cho: <span class="fw-bold">{{ quyen_dang_chon.ten_quyen }}</span>
+                            </p>
+                        </div>
+                        <div v-if="quyen_dang_chon.id" class="d-flex gap-2">
+                            <button @click="huyPhanQuyen()" class="btn btn-secondary">
+                                <i class="fas fa-times me-1"></i> Hủy
+                            </button>
+                            <button @click="luuPhanQuyen()" class="btn btn-success">
+                                <i class="fas fa-save me-1"></i> Lưu Phân Quyền
+                            </button>
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="row">
+                            <div class="col-12 mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text bg-primary text-white">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        v-model="search_chuc_nang"
+                                        placeholder="Tìm kiếm chức năng..."
+                                    >
+                                </div>
+                            </div>
                             <div class="table-responsive">
-                                <table class="table table-bordered">
+                                <table class="table table-hover">
                                     <thead>
-                                        <tr class="text-center text-nowrap align-middle">
-                                            <th>#</th>
-                                            <th>Tên Chức Năng</th>
-                                            <th>Action</th>
+                                        <tr class="text-center text-nowrap align-middle bg-light">
+                                            <th style="width: 50px">
+                                                <input type="checkbox" 
+                                                    v-model="selectAll" 
+                                                    @change="toggleSelectAll" 
+                                                    class="form-check-input"
+                                                    :disabled="!quyen_dang_chon.id">
+                                            </th>
+                                            <th style="width: 80px">#</th>
+                                            <th class="text-start">Tên Chức Năng</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr v-for="(v, k) in list_chuc_nang" :key="k" class="align-middle">
-                                            <th class="text-center">{{ k + 1 }}</th>
-                                            <td class="text-wrap">{{ v.ten_chuc_nang }}</td>
+                                        <tr v-for="(v, k) in filtered_chuc_nang" 
+                                            :key="k" 
+                                            class="align-middle"
+                                            :class="{'table-active': isQuyenDuocChon(v.id)}">
                                             <td class="text-center">
-                                                <button v-on:click="capQuyen(v)" class="btn text-nowrap">Cấp
-                                                    Quyền</button>
+                                                <input type="checkbox" 
+                                                    v-model="v.isSelected" 
+                                                    class="form-check-input"
+                                                    :disabled="!quyen_dang_chon.id">
+                                            </td>
+                                            <th class="text-center">{{ k + 1 }}</th>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="fas fa-shield-alt me-2 text-primary"></i>
+                                                    {{ v.ten_chuc_nang }}
+                                                </div>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -183,39 +225,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-header">
-                        Đang Phân Quyền Cho <b class="text-danger"> {{ quyen_dang_chon.ten_quyen }} </b>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr class="text-center text-nowrap align-middle">
-                                            <th>Tên Chức Năng</th>
-                                            <th>Tên Quyền</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <template v-for="(v, k) in list_chi_tiet" :key="k">
-                                            <tr class="align-middle">
-                                                <td class="text-wrap">{{ v.ten_chuc_nang }}</td>
-                                                <td>{{ v.ten_quyen }}</td>
-                                                <td class="text-center">
-                                                    <button v-on:click="xoaQuyen(v)" class="btn btn-danger">Xóa</button>
-                                                </td>
-                                            </tr>
-                                        </template>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
         </div>
     </div>
 
@@ -232,7 +242,20 @@ export default {
             update_quyen: {},
             quyen_dang_chon: {},
             list_chi_tiet: [],
-            tim_kiem: {}
+            tim_kiem: {},
+            selectAll: false,
+            quyen_hien_tai: [],
+            search_chuc_nang: '',
+        }
+    },
+    computed: {
+        filtered_chuc_nang() {
+            if (!this.search_chuc_nang) return this.list_chuc_nang;
+            
+            const searchTerm = this.search_chuc_nang.toLowerCase().trim();
+            return this.list_chuc_nang.filter(item => 
+                item.ten_chuc_nang.toLowerCase().includes(searchTerm)
+            );
         }
     },
     mounted() {
@@ -273,6 +296,8 @@ export default {
                 });
         },
         loadData() {
+            if (!this.quyen_dang_chon.id) return;
+            
             var payload = {
                 'id_quyen': this.quyen_dang_chon.id,
             };
@@ -285,18 +310,50 @@ export default {
                 .then((res) => {
                     if (res.data.status == false) {
                         this.$toast.error(res.data.message)
+                        return;
                     }
-                    this.list_chi_tiet = res.data.data;
+                    this.quyen_hien_tai = res.data.data.map(item => item.chuc_nang_id);
+                    this.list_chuc_nang.forEach(chuc_nang => {
+                        chuc_nang.isSelected = this.quyen_hien_tai.includes(chuc_nang.id);
+                    });
+                    this.selectAll = this.list_chuc_nang.every(chuc_nang => chuc_nang.isSelected);
                 });
         },
-        capQuyen(chuc_nang) {
+        toggleSelectAll() {
+            if (!this.quyen_dang_chon.id) return;
+            
+            this.filtered_chuc_nang.forEach(chuc_nang => {
+                chuc_nang.isSelected = this.selectAll;
+            });
+        },
+        huyPhanQuyen() {
+            this.quyen_dang_chon = {};
+            this.selectAll = false;
+            this.list_chuc_nang.forEach(chuc_nang => {
+                chuc_nang.isSelected = false;
+            });
+            this.quyen_hien_tai = [];
+        },
+        isQuyenDuocChon(id_chuc_nang) {
+            return this.quyen_hien_tai.includes(id_chuc_nang);
+        },
+        luuPhanQuyen() {
+            if (!this.quyen_dang_chon.id) {
+                this.$toast.error('Vui lòng chọn quyền cần phân quyền!');
+                return;
+            }
+
+            const selectedIds = this.list_chuc_nang
+                .filter(chuc_nang => chuc_nang.isSelected)
+                .map(chuc_nang => chuc_nang.id);
+
             var payload = {
                 'id_quyen': this.quyen_dang_chon.id,
-                'id_chuc_nang': chuc_nang.id
+                'list_id_chuc_nang': selectedIds
             };
 
             axios
-                .post("http://127.0.0.1:8000/api/admin/chi-tiet-phan-quyen/cap-quyen", payload, {
+                .post("http://127.0.0.1:8000/api/admin/chi-tiet-phan-quyen/cap-nhieu-quyen", payload, {
                     headers: {
                         Authorization: 'Bearer ' + localStorage.getItem("token_admin")
                     }
@@ -308,7 +365,6 @@ export default {
                     } else {
                         this.$toast.error(res.data.message)
                     }
-
                 });
         },
         layDuLieuChucNang() {

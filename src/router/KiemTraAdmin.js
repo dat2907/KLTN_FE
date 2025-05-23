@@ -15,5 +15,9 @@ export default function (to, from, next) {
         next("/admin/dang-nhap");
         toaster.error(res.data.message);
       }
+    })
+    .catch((err) => {
+      next("/admin/dang-nhap");
+      toaster.error(err.response.data.message);
     });
 }
