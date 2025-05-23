@@ -171,10 +171,10 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-12 mb-3">
+                            <div class="col-12 ">
                                 <div class="input-group">
-                                    <span class="input-group-text bg-primary text-white">
-                                        <i class="fas fa-search"></i>
+                                    <span class="input-group-text bg-primary text-white" style="border-radius: 10px 0 0 10px;">
+                                        <i class="fas fa-search p-2"></i>
                                     </span>
                                     <input 
                                         type="text" 

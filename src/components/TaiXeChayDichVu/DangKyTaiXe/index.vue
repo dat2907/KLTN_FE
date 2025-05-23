@@ -107,7 +107,7 @@
             <h3 class="text-center mb-3">Đăng Ký Tài Khoản</h3>
             <p class="text-center">
                 Bạn đã có tài khoản?
-                <router-link to="/taixechaydichvu/dang-nhap-tai-xe" class="auth-link">Đăng nhập</router-link>
+                <router-link to="/tai-xe-chay-dich-vu/dang-nhap-tai-xe" class="auth-link">Đăng nhập</router-link>
             </p>
             <hr>
             <form>
