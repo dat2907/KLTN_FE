@@ -160,12 +160,12 @@ const routes = [
         meta: { layout: "client" },
         beforeEnter: KiemTraKhachHang
     },
-    {
-        path: "/client/lich-su-chuyen-xe",
-        component: () => import("../components/Client/LichSuChuyenXe/index.vue"),
-        meta: { layout: "client" },
-        beforeEnter: KiemTraKhachHang,
-    },
+    // {
+    //     path: "/client/lich-su-chuyen-xe",
+    //     component: () => import("../components/Client/LichSuChuyenXe/index.vue"),
+    //     meta: { layout: "client" },
+    //     beforeEnter: KiemTraKhachHang,
+    // },
     {
         path: "/client/ho-tro-khach-hang",
         component: () => import("../components/Client/HoTroKhachHang/index.vue"),
@@ -175,6 +175,8 @@ const routes = [
         path: "/Client/thanh-toan",
         component: () => import("../components/Client/ThanhToan/index.vue"),
         meta: { layout: "client" },
+        beforeEnter: KiemTraKhachHang,
+        props: true,
     },
     //taixe
     {

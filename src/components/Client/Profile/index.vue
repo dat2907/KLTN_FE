@@ -98,7 +98,7 @@
 
                             <div class="row ">
                                 <div class="col-lg-9">
-                                    <div class="row mb-3">
+                                    <!-- <div class="row mb-3">
                                         <div class="col-lg-2">
                                             <label for="">Mật khẩu cũ</label>
                                         </div>
@@ -106,7 +106,7 @@
                                             <input v-model="changepassword.old_password" type="password"
                                                 placeholder="Nhập mật khẩu cũ" class="form-control">
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="row mb-3">
                                         <div class="col-lg-2">
                                             <label for="">Mật khẩu mới</label>
